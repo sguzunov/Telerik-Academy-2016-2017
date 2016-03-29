@@ -1,0 +1,1 @@
+**CSharp** is a programming language and it is a part of the .NET Framework platform. **.NET Framework** is a software framework developed by Microsoft that runs primarily on Microsoft Windows. **.NET Framework** consists of an environment for development and execution of programs. C# programs are mostly built on .NET Framework.
