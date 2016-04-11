@@ -17,14 +17,14 @@
             {
                 if (value == 0)
                 {
-                    number = number & (~(1u << position));
+                    number = number & (~((ulong)1 << position));
                 }
             }
             else
             {
                 if (value == 1)
                 {
-                    number = number | (1u << position);
+                    number = number | ((ulong)1 << position);
                 }
             }
 
