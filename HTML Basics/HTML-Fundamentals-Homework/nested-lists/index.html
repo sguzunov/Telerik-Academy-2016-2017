@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Nested Lists</title>
+    <style>
+    .list-square-type {
+        list-style: square;
+    }
+    
+    .list-circle-type {
+        list-style: circle;
+    }
+    
+    .list-disk-type {
+        list-style: disc;
+    }
+    </style>
+</head>
+
+<body>
+    <ol type="I">
+        <li>
+            List item 1
+            <ol type="a">
+                <li>Nested item 1.1</li>
+                <li>Nested item 1.2</li>
+            </ol>
+        </li>
+        <li>
+            List item 2
+            <ol type="1">
+                <li>Nested item 2.1</li>
+                <li>
+                    Nested item 2.2
+                    <ul class="list-circle-type">
+                        <li>Nested item 2.2.1</li>
+                        <li>
+                            Nested item 2.2.2
+                            <ul class="list-square-type">
+                                <li>Nested item 2.2.2.1</li>
+                                <li>Nested item 2.2.2.2</li>
+                            </ul>
+                        </li>
+                        <li>Nested item 2.2.3</li>
+                    </ul>
+                </li>
+                <li>Nested item 2.3</li>
+            </ol>
+        </li>
+        <li>
+            List item 3
+            <ul class="list-disk-type">
+                <li>Nested item 3.1</li>
+                <li>Nested item 3.2</li>
+                <li>Nested item 3.3</li>
+            </ul>
+        </li>
+    </ol>
+</body>
+
+</html>
