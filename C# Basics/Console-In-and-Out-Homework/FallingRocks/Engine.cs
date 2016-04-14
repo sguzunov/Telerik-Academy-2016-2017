@@ -162,6 +162,7 @@
 
         private static void SetConsoleOptions()
         {
+            Console.BackgroundColor = ConsoleColor.White;
             Console.WindowWidth = ConsoleWidth;
             Console.CursorVisible = false;
 
