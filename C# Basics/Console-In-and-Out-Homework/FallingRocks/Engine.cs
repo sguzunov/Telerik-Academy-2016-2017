@@ -34,41 +34,33 @@
             SetConsoleOptions();
             var player = CreatePlayer();
             List<GameObject> stones = new List<GameObject>();
-
-            while (true)
+            while (isAlive)
             {
-                if (isAlive)
+                GameObject stone = CreateStone();
+                stones.Add(stone);
+
+                CheckForCollision(player, stones);
+                RemoveFallenStones(stones);
+
+                RenderGameObject(player);
+                RenderStones(stones);
+
+                if (Console.KeyAvailable)
                 {
-                    GameObject newStone = CreateNewStone();
-                    stones.Add(newStone);
-
-                    CheckForCollision(player, stones);
-                    RemoveFallenStones(stones);
-
-                    RenderGameObject(player);
-                    RenderStones(stones);
-
-                    if (Console.KeyAvailable)
-                    {
-                        var pressedKey = Console.ReadKey();
-                        UpdatePlayerPosition(player, pressedKey);
-                    }
-
-                    UpdateStonesPosition(stones);
-
-                    Thread.Sleep(150);
-                    Console.Clear();
+                    var pressedKey = Console.ReadKey();
+                    UpdatePlayerPosition(player, pressedKey);
                 }
-                else
-                {
-                    Console.WriteLine("LOOOSERRR :D:D:D");
-                    Console.WriteLine("Your points: {0}", playerPoints);
-                    break;
-                }
+
+                UpdateStonesPosition(stones);
+                Thread.Sleep(100);
+                Console.Clear();
             }
+
+            Console.WriteLine("LOOOSERRR :D:D:D");
+            Console.WriteLine("Your points: {0}", playerPoints);
         }
 
-        // TODO: Make a better precision!
+        // TODO: Precision collision.
         private static void CheckForCollision(GameObject player, List<GameObject> stones)
         {
             for (int i = 0; i < stones.Count; i++)
@@ -103,11 +95,13 @@
 
         private static void UpdatePlayerPosition(GameObject player, ConsoleKeyInfo pressedKey)
         {
-            if (pressedKey.Key == ConsoleKey.LeftArrow && player.PositionOnConcole.x > 0)
+            bool canGoLeft = pressedKey.Key == ConsoleKey.LeftArrow && player.PositionOnConcole.x > 0;
+            bool canGoRight = pressedKey.Key == ConsoleKey.RightArrow && (player.PositionOnConcole.x + player.Sign.Length) < ConsoleWidth - 1;
+            if (canGoLeft)
             {
                 player.PositionOnConcole.x--;
             }
-            else if (pressedKey.Key == ConsoleKey.RightArrow && (player.PositionOnConcole.x + player.Sign.Length - 1) <= ConsoleWidth)
+            else if (canGoRight)
             {
                 player.PositionOnConcole.x++;
             }
@@ -123,24 +117,30 @@
 
         private static GameObject CreatePlayer()
         {
-            var playerStarPsition = new Position(PlayerStartPositionX - (PlayerSign.Length / 2), PlayerStartPositionY);
-            var player = new GameObject(PlayerSign, playerStarPsition, PlayerColor);
+            Position playerStarPosition = GetNewPosition(PlayerStartPositionX - (PlayerSign.Length / 2), PlayerStartPositionY);
+            var player = new GameObject(PlayerSign, playerStarPosition, PlayerColor);
             return player;
         }
 
-        private static GameObject CreateNewStone()
+        private static Position GetNewPosition(int x, int y)
+        {
+            Position position = new Position(x, y);
+            return position;
+        }
+
+        private static GameObject CreateStone()
         {
             int signIndex = GetRandomNumber(0, stoneSigns.Length - 1);
-            string stoneSign = stoneSigns[signIndex];
+            string randomStoneSign = stoneSigns[signIndex];
             ConsoleColor color = EnemyColor;
-            if (stoneSign == MoneySign)
+            if (randomStoneSign == MoneySign)
             {
                 color = MoneyColor;
             }
 
             int stoneStartPositionX = GetRandomNumber(0, Console.WindowWidth - 1);
-            Position stonePosition = new Position(stoneStartPositionX, StoneStartPositionY);
-            GameObject stone = new GameObject(stoneSign, stonePosition, color);
+            Position stonePosition = GetNewPosition(stoneStartPositionX, StoneStartPositionY);
+            GameObject stone = new GameObject(randomStoneSign, stonePosition, color);
             return stone;
         }
 
