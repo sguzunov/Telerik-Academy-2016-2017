@@ -2,6 +2,7 @@
 {
     using System;
     using System.Collections.Generic;
+    using System.Security.Cryptography;
     using System.Threading;
 
     public class Engine
@@ -52,7 +53,7 @@
                 }
 
                 UpdateStonesPosition(stones);
-                Thread.Sleep(100);
+                Thread.Sleep(150);
                 Console.Clear();
             }
 
@@ -95,15 +96,25 @@
 
         private static void UpdatePlayerPosition(GameObject player, ConsoleKeyInfo pressedKey)
         {
-            bool canGoLeft = pressedKey.Key == ConsoleKey.LeftArrow && player.PositionOnConcole.x > 0;
-            bool canGoRight = pressedKey.Key == ConsoleKey.RightArrow && (player.PositionOnConcole.x + player.Sign.Length) < ConsoleWidth - 1;
-            if (canGoLeft)
+            switch (pressedKey.Key)
             {
-                player.PositionOnConcole.x--;
-            }
-            else if (canGoRight)
-            {
-                player.PositionOnConcole.x++;
+                case ConsoleKey.LeftArrow:
+                    {
+                        if (player.PositionOnConcole.x > 0)
+                        {
+                            player.PositionOnConcole.x--;
+                        }
+
+                        break;
+                    }
+                case ConsoleKey.RightArrow:
+                    {
+                        if (player.PositionOnConcole.x + player.Sign.Length < ConsoleWidth - 1)
+                        {
+                            player.PositionOnConcole.x++;
+                        }
+                        break;
+                    }
             }
         }
 
@@ -168,12 +179,13 @@
 
             // Removes scrollbar.
             Console.BufferHeight = Console.WindowHeight;
+            Console.BufferWidth = Console.WindowWidth;
         }
 
-        private static int GetRandomNumber(int minValue, int maxValue)
+        private static int GetRandomNumber(int minSize, int maxSize)
         {
             Random random = new Random((int)DateTime.Now.Ticks);
-            int randomNumber = random.Next(minValue, maxValue);
+            int randomNumber = random.Next(minSize, maxSize);
             return randomNumber;
         }
     }

@@ -1,0 +1,27 @@
+    #alphabet-table {
+        font-weight: bold;
+        table-layout: fixed;
+        width: 185px;
+        border-color: white;
+    }
+
+    #alphabet-table tr td {
+        border-color: white;
+        border-style: inset;
+    }
+
+    .center-aligned {
+        text-align: center;
+    }
+
+    .left-aligned {
+        text-align: left;
+    }
+
+    .right-aligned {
+        text-align: right;
+    }
+
+    .bottom-aligned {
+        vertical-align: bottom;
+    }

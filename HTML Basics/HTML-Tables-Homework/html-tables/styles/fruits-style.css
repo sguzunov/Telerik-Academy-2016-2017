@@ -1,0 +1,13 @@
+    .title {
+        font-style: italic;
+        font-size: 28px;
+    }
+
+    .summary {
+        max-width: 250px;
+        font-size: 18px;
+    }
+
+    .fruits-image {
+        max-width: 180px;
+    }

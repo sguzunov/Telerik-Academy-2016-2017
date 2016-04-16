@@ -1,0 +1,11 @@
+	.required {
+	    font-weight: bold;
+	}
+
+	#submit-button {
+	    width: 80px;
+	}
+
+	div {
+	    margin-bottom: 2px;
+	}
