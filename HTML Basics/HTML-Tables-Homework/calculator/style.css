@@ -4,6 +4,8 @@
 
 #calculator-result {
     text-align: right;
+    box-sizing: border-box;
+    padding-right: 15px;
 }
 
 #calculator tr td {
