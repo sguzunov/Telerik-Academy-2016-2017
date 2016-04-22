@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Registration form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <form>
+        <table id="reg-form-grid">
+            <colgroup>
+                <col width="180px">
+                <col width="170px">
+            </colgroup>
+            <tfoot id="form-footer">
+                <tr>
+                    <td colspan="4">
+                        <input type="submit" value="Submit">
+                        <input type="reset" value="Clear This Form">
+                    </td>
+                </tr>
+            </tfoot>
+            <tbody>
+                <tr>
+                    <td class="form-info">
+                        <label for="last-name-field">Last name</label>
+                    </td>
+                    <td colspan="3">
+                        <input type="text" name="LastName" id="last-name-field" autofocus="autofocus" required="required">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="form-info">
+                        <label for="first-name-field">First name</label>
+                    </td>
+                    <td colspan="3">
+                        <input type="text" name="FirstName" id="first-name-field" required="required">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="form-info">
+                        <label for="address-field">Address</label>
+                    </td>
+                    <td colspan="3">
+                        <textarea name="Address" id="address-field" cols="20" rows="3" maxlength="100" required="required"></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="form-info">
+                        <label for="city-field">City</label>
+                    </td>
+                    <td>
+                        <input type="text" name="City" id="city-field" required="required">
+                    </td>
+                    <td class="form-info">
+                        <label for="state-field">State</label>
+                    </td>
+                    <td>
+                        <input type="text" name="State" id="state-field">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="form-info">
+                        <label for="zip-code-field">Zip/Postal Code</label>
+                    </td>
+                    <td colspan="3">
+                        <input type="text" id="zip-code-field" name="ZipCode">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="form-info">
+                        <label for="country-field">Country</label>
+                    </td>
+                    <td colspan="3">
+                        <select name="Country" id="country-field">
+                            <option value="Albania">Albania</option>
+                            <option value="Albania">Bulgaria</option>
+                            <option value="Albania">Canada</option>
+                            <option value="Albania">Dominica</option>
+                            <option value="Albania">Egypt</option>
+                            <option value="Albania">France</option>
+                            <option value="Albania">Germany</option>
+                            <option value="Albania">Hungary</option>
+                            <option value="Albania">India</option>
+                            <option value="Albania">Japan</option>
+                            <option value="Albania">Kenya</option>
+                            <option value="Albania">Latvia</option>
+                            <option value="Albania">Netherlands</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr><td class="form-info">
+
+                        <label for="">Phone (country code, area code, number)</label>
+                    </td>
+                    <td colspan="3">
+                        <span>(+</span>
+                        <input class="phone-number" id="country-code-field" type="text" pattern="[0-9]*" placeholder="0 - 9">
+                        <span>)</span>
+                        <input class="phone-number" id="area-code-field" type="text" pattern="[0-9]*" placeholder="0 - 9">
+                        <span>-</span>
+                        <input class="phone-number" id="phone-number-field" type="text" pattern="[0-9]*" placeholder="0 - 9">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="form-info">
+                        <label for="email-field">E-mail</label>
+                    </td>
+                    <td colspan="3">
+                        <input type="email" id="email-field" pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required="required">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="form-info">
+                        <label for="">Birth date</label>
+                    </td>
+                    <td colspan="3">
+                        <label for="month-field">Month</label>
+                        <input type="text" maxlength="2" id="month-field">
+                        <label for="day-field"> Day</label>
+                        <input type="text" maxlength="2" id="day-field">
+                        <label for="year-field"> Year(4 digit)</label>
+                        <input type="number" min="1916" max="2016" id="year-field">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="form-info">
+                        <label for="gender-field">Gender</label>
+                    </td>
+                    <td colspan="3">
+                        <select name="Gender" id="gender-field">
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                            <option selected="selected" required="required" disabled="disabled">--select--</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="form-info">
+                        <label>Starting date</label>
+                    </td>
+                    <td colspan="3">
+                        <input id="spring-radio" type="radio" name="season" value="Spring 2016">
+                        <label for="spring-radio">Spring 2016</label>
+                        <input id="summer-radio" type="radio" name="season" value="Summer 2006">
+                        <label for="summer-radio">Summer 2006</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="form-info">
+                        <label for="comment-field">Comments/Questions</label>
+                    </td>
+                    <td colspan="3">
+                        <textarea name="" id="comment-field" rows="5" maxlength="500"></textarea>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </form>
+</body>
+
+</html>

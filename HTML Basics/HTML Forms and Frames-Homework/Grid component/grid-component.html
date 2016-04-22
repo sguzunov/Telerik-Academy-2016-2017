@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Grid Component</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<form action="get">
+    <table id="grid" cellspacing="0">
+        <colgroup>
+            <col style="width: 10%">
+            <col style="width: 30%">
+            <col style="width: 20%">
+            <col style="width: 20%">
+            <col style="width: 25%">
+            <col style="width: 15%">
+        </colgroup>
+        <thead>
+            <tr>
+                <td colspan="6">Drag a column header here and drop it here to group byt that column</td>
+            </tr>
+            <tr>
+                <th>ProductID</th>
+                <th>Product name</th>
+                <th>Unit price</th>
+                <th>Quantity per unit</th>
+                <th>Units in stock</th>
+                <th>Disconected</th>
+            </tr>
+            <tr>
+                <td>
+                    <input id="product-id-field" class="filter-field" type="text">
+                </td>
+                <td>
+                    <input id="product-name-field" class="filter-field" type="text">
+                </td>
+                <td>
+                    <input id="unit-price-field" class="filter-field" type="text">
+                    <input class="filter-btn" type="button">
+                </td>
+                <td>
+                    <input id="quantity-per-unit-field" class="filter-field" type="text">
+                </td>
+                <td>
+                    <input id="units-field" class="filter-field" type="text">
+                    <input class="filter-btn" type="button">
+                </td>
+                <td>
+                    <input id="disconnected-field" class="filter-field" type="checkbox">
+                    <input class="filter-btn" type="button">
+                </td>
+            </tr>
+        </thead>
+        <tfoot>
+            <tr>
+                <td colspan="2">
+                    <div id="grid-navigation">
+                        <input id="first-page-btn" class="page-btn" type="button">
+                        <input id="prev-page-btn" class="page-btn" type="button">
+                        <a href="#">1</a>
+                        <a href="#">2</a>
+                        <a href="#">3</a>
+                        <a href="#">4</a>
+                        <a href="#">5</a>
+                        <a href="#">6</a>
+                        <a href="#">7</a>
+                        <a href="#">8</a>
+                        <a href="#">9</a>
+                        <a href="#">10</a>
+                        <span>...</span>
+                        <input id="next-page-btn" class="page-btn" type="button">
+                        <input id="last-page-btn" class="page-btn" type="button">
+                    </div>
+                </td>
+                <td>
+                    <label for="page-size-field">Page size:</label>
+                    <select name="PageSize" id="page-size-field">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                    </select>
+                </td>
+                <td colspan="3">335104 items in 33511 pages</td>
+            </tr>
+        </tfoot>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>Chai</td>
+                <td>$18.00</td>
+                <td>10 boxes x 20 bags</td>
+                <td>39</td>
+                <td>
+                    <input type="checkbox">
+                </td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Chang</td>
+                <td>$19.00</td>
+                <td>24-12 oz bottles</td>
+                <td>17</td>
+                <td>
+                    <input type="checkbox">
+                </td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Aniseed</td>
+                <td>$10.00</td>
+                <td>12-550 ml bottles</td>
+                <td>13</td>
+                <td>
+                    <input type="checkbox">
+                </td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>Chef Anton's Cajun Seasoning</td>
+                <td>$22.00</td>
+                <td>48-6 oz jars</td>
+                <td>53</td>
+                <td>
+                    <input type="checkbox">
+                </td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>Chef Anton's Gumbo Mix</td>
+                <td>$21.35</td>
+                <td>36 boxes</td>
+                <td>0</td>
+                <td>
+                    <input type="checkbox">
+                </td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Chai</td>
+                <td>$18.00</td>
+                <td>10 boxes x 20 bags</td>
+                <td>39</td>
+                <td>
+                    <input type="checkbox">
+                </td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Chai</td>
+                <td>$18.00</td>
+                <td>10 boxes x 20 bags</td>
+                <td>39</td>
+                <td>
+                    <input type="checkbox">
+                </td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Chai</td>
+                <td>$18.00</td>
+                <td>10 boxes x 20 bags</td>
+                <td>39</td>
+                <td>
+                    <input type="checkbox">
+                </td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Chai</td>
+                <td>$18.00</td>
+                <td>10 boxes x 20 bags</td>
+                <td>39</td>
+                <td>
+                    <input type="checkbox">
+                </td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Chai</td>
+                <td>$18.00</td>
+                <td>10 boxes x 20 bags</td>
+                <td>39</td>
+                <td>
+                    <input type="checkbox">
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</form>
+
+<body>
+</body>
+
+</html>

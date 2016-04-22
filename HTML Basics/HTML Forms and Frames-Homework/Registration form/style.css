@@ -1,0 +1,62 @@
+#reg-form-grid {
+    border: 1px #909090 solid;
+    border-collapse: collapse;
+}
+
+#reg-form-grid td {
+    border: 1px #909090 solid;
+    box-sizing: border-box;
+    padding: 5px;
+}
+
+.form-info {
+    text-align: right;
+    font-weight: bold;
+}
+
+#reg-form-grid label {
+    font-family: sans-serif;
+}
+
+#form-footer {
+    background-color: #D1EDE1;
+    text-align: center;
+}
+
+.phone-number {
+    box-sizing: border-box;
+    padding-left: 5px;
+}
+
+#reg-form-grid textarea {
+    resize: none;
+    width: 90%;
+}
+
+#first-name-field,
+#last-name-field,
+#email-field {
+    width: 95%;
+}
+
+#country-code-field,
+#area-code-field {
+    width: 20%;
+}
+
+#phone-number-field {
+    width: 40%;
+}
+
+#month-field,
+#day-field {
+    width: 7%;
+}
+
+#year-field {
+    width: 15%;
+}
+
+#state-field {
+    width: 50px;
+}

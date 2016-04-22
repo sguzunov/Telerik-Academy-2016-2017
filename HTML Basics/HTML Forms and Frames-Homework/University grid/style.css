@@ -1,0 +1,31 @@
+form,
+table,
+tr,
+td {
+    padding: 0;
+    margin: 0;
+}
+
+#students-grid {
+    border-collapse: collapse;
+    border: 1px solid #000;
+}
+
+#students-grid th,
+td {
+    border: 1px solid #000;
+    padding: 5px;
+}
+
+#grid-links {
+    display: inline-block;
+}
+
+.total-field {
+    text-align: center;
+    font-weight: bold;
+}
+
+#students-grid tfoot td {
+    padding: 7px;
+}

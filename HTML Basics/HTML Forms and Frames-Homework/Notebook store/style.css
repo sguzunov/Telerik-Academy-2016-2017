@@ -1,0 +1,76 @@
+table,
+div,
+tr,
+td,
+th,
+a,
+thead,
+tbody,
+img,
+fieldset,
+legend,
+{
+    margin: 0;
+    padding: 0;
+}
+
+form {
+    display: inline-block;
+}
+
+#laptops {
+    font-size: 18px;
+    font-family: sans-serif;
+    border: 2px solid #000;
+    border-radius: 7px;
+}
+
+#laptops a {
+    color: #00AFF0;
+}
+
+.laptop-info {
+    border: 2px solid #000;
+    margin-bottom: 5px;
+}
+
+.laptop-info legend {
+    text-align: center;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+.laptop-info {
+    display: inline-block;
+}
+
+.laptop-image {
+    width: 150px;
+    display: inline-block;
+}
+
+.upper-case {
+    text-transform: uppercase;
+}
+
+.bottom-aligned {
+    vertical-align: bottom;
+}
+
+.center-aligned {
+    text-align: center;
+}
+
+.laptops-box {
+    border: 2px solid #000;
+    box-sizing: border-box;
+    padding: 5px 5px 10px 5px;
+}
+
+input[type="range"] {
+    width: 80%;
+}
+
+.more-info {
+    border-bottom: 2px solid #000;
+}
