@@ -17,91 +17,178 @@ class SpiralMatrix
         int n = int.Parse(Console.ReadLine());
 
         int[,] spiralMatrix = new int[n, n];
-        FillMatrixResursively(1, startRow, startCol, spiralMatrix, right);
+        //FillMatrixResursively(1, startRow, startCol, spiralMatrix, right);
+        FillMatrixIteratively(startRow, startCol, spiralMatrix, right, true, 1);
         PrintMatrix(spiralMatrix);
     }
 
-    private static void FillMatrixResursively(int number, int row, int col, int[,] matrix, string direction, bool canGo = true)
+    private static void FillMatrixIteratively(int row, int col, int[,] matrix, string direction, bool canGo = true, int number = 1)
     {
-        matrix[row, col] = number;
-        if (direction == right)
+        while (true)
         {
-            int nextCol = col + 1;
-            int nextRow = row + 1;
-            if ((nextCol) < matrix.GetLength(0) && matrix[row, nextCol] == 0)
+            matrix[row, col] = number;
+            if (direction == right)
             {
-                col++;
+                int nextCol = col + 1;
+                int nextRow = row + 1;
+                if ((nextCol) < matrix.GetLength(0) && matrix[row, nextCol] == 0)
+                {
+                    col++;
+                }
+                else if ((nextRow) < matrix.GetLength(1) && matrix[nextRow, col] == 0)
+                {
+                    row++;
+                    direction = down;
+                }
+                else
+                {
+                    canGo = false;
+                }
             }
-            else if ((nextRow) < matrix.GetLength(1) && matrix[nextRow, col] == 0)
+            else if (direction == down)
             {
-                row++;
-                direction = down;
+                int nextRow = row + 1;
+                int nextCol = col - 1;
+                if ((nextRow) < matrix.GetLength(1) && matrix[nextRow, col] == 0)
+                {
+                    row++;
+                }
+                else if ((nextCol) >= 0 && matrix[row, nextCol] == 0)
+                {
+                    col--;
+                    direction = left;
+                }
+                else
+                {
+                    canGo = false;
+                }
+            }
+            else if (direction == left)
+            {
+                int nextRow = row - 1;
+                int nextCol = col - 1;
+                if ((nextCol) >= 0 && matrix[row, nextCol] == 0)
+                {
+                    col--;
+                }
+                else if ((nextRow) >= 0 && matrix[nextRow, col] == 0)
+                {
+                    row--;
+                    direction = up;
+                }
+                else
+                {
+                    canGo = false;
+                }
             }
             else
             {
-                canGo = false;
+                int nextRow = row - 1;
+                int nextCol = col + 1;
+                if ((nextRow) >= 0 && matrix[nextRow, col] == 0)
+                {
+                    row--;
+                }
+                else if ((nextCol) < matrix.GetLength(0) && matrix[row, nextCol] == 0)
+                {
+                    col++;
+                    direction = right;
+                }
+                else
+                {
+                    canGo = false;
+                }
             }
-        }
-        else if (direction == down)
-        {
-            int nextRow = row + 1;
-            int nextCol = col - 1;
-            if ((nextRow) < matrix.GetLength(1) && matrix[nextRow, col] == 0)
-            {
-                row++;
-            }
-            else if ((nextCol) >= 0 && matrix[row, nextCol] == 0)
-            {
-                col--;
-                direction = left;
-            }
-            else
-            {
-                canGo = false;
-            }
-        }
-        else if (direction == left)
-        {
-            int nextRow = row - 1;
-            int nextCol = col - 1;
-            if ((nextCol) >= 0 && matrix[row, nextCol] == 0)
-            {
-                col--;
-            }
-            else if ((nextRow) >= 0 && matrix[nextRow, col] == 0)
-            {
-                row--;
-                direction = up;
-            }
-            else
-            {
-                canGo = false;
-            }
-        }
-        else
-        {
-            int nextRow = row - 1;
-            int nextCol = col + 1;
-            if ((nextRow) >= 0 && matrix[nextRow, col] == 0)
-            {
-                row--;
-            }
-            else if ((nextCol) < matrix.GetLength(0) && matrix[row, nextCol] == 0)
-            {
-                col++;
-                direction = right;
-            }
-            else
-            {
-                canGo = false;
-            }
-        }
 
-        if (canGo)
-        {
-            FillMatrixResursively(number + 1, row, col, matrix, direction, canGo);
+            number++;
+            if (!canGo)
+            {
+                break;
+            }
         }
     }
+
+    //private static void FillMatrixResursively(int number, int row, int col, int[,] matrix, string direction, bool canGo = true)
+    //{
+    //    matrix[row, col] = number;
+    //    if (direction == right)
+    //    {
+    //        int nextCol = col + 1;
+    //        int nextRow = row + 1;
+    //        if ((nextCol) < matrix.GetLength(0) && matrix[row, nextCol] == 0)
+    //        {
+    //            col++;
+    //        }
+    //        else if ((nextRow) < matrix.GetLength(1) && matrix[nextRow, col] == 0)
+    //        {
+    //            row++;
+    //            direction = down;
+    //        }
+    //        else
+    //        {
+    //            canGo = false;
+    //        }
+    //    }
+    //    else if (direction == down)
+    //    {
+    //        int nextRow = row + 1;
+    //        int nextCol = col - 1;
+    //        if ((nextRow) < matrix.GetLength(1) && matrix[nextRow, col] == 0)
+    //        {
+    //            row++;
+    //        }
+    //        else if ((nextCol) >= 0 && matrix[row, nextCol] == 0)
+    //        {
+    //            col--;
+    //            direction = left;
+    //        }
+    //        else
+    //        {
+    //            canGo = false;
+    //        }
+    //    }
+    //    else if (direction == left)
+    //    {
+    //        int nextRow = row - 1;
+    //        int nextCol = col - 1;
+    //        if ((nextCol) >= 0 && matrix[row, nextCol] == 0)
+    //        {
+    //            col--;
+    //        }
+    //        else if ((nextRow) >= 0 && matrix[nextRow, col] == 0)
+    //        {
+    //            row--;
+    //            direction = up;
+    //        }
+    //        else
+    //        {
+    //            canGo = false;
+    //        }
+    //    }
+    //    else
+    //    {
+    //        int nextRow = row - 1;
+    //        int nextCol = col + 1;
+    //        if ((nextRow) >= 0 && matrix[nextRow, col] == 0)
+    //        {
+    //            row--;
+    //        }
+    //        else if ((nextCol) < matrix.GetLength(0) && matrix[row, nextCol] == 0)
+    //        {
+    //            col++;
+    //            direction = right;
+    //        }
+    //        else
+    //        {
+    //            canGo = false;
+    //        }
+    //    }
+
+    //    if (canGo)
+    //    {
+    //        FillMatrixResursively(number + 1, row, col, matrix, direction, canGo);
+    //    }
+    //}
 
     private static void PrintMatrix(int[,] matrix)
     {
