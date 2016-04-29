@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>LinkedIn</title>
+    <style>
+    .bold {
+        font-weight: bold;
+    }
+    
+    fieldset {
+        border-color: grey;
+    }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>LinkedIn</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">What is LinkedIn?</a></li>
+                <li><a href="#">Join Today</a></li>
+                <li>
+                    <form action="get">
+                        <fieldset>
+                            <legend>Sign In</legend>
+                            <ul>
+                                <li>
+                                    <label for="email-field">Email:</label>
+                                    <input type="email" title="password">
+                                </li>
+                                <li>
+                                    <label for="pass-field">Password:</label>
+                                    <input type="password">
+                                </li>
+                                <li>
+                                    <input type="submit" value="Sign in">
+                                </li>
+                            </ul>
+                        </fieldset>
+                    </form>
+                </li>
+            </ul>
+        </nav>
+        <hr>
+        <article>
+            <h2>Over 175 million professionals use LinkedIn to exchange information, ideas and opportunities</h2>
+            <ul>
+                <li>Stay informed about your contacts and industry</li>
+                <li>Find the people &amp; knowledge you need to achieve you goals</li>
+                <li>Control your professional identity online</li>
+            </ul>
+        </article>
+        <form>
+            <strong>Join LinkedIn Today</strong>
+            <fieldset>
+                <legend>Sign Up</legend>
+                <ul>
+                    <li>
+                        <label for="first-name-field">First Name:</label>
+                        <input id="first-name-field" type="text">
+                    </li>
+                    <li>
+                        <label for="last-name-field">Last Name:</label>
+                        <input id="last-name-field" type="text">
+                    </li>
+                    <li>
+                        <label for="email-field">Email:</label>
+                        <input id="email-field" type="email">
+                    </li>
+                    <li>
+                        <label for="pass-field">Password</label>
+                        <input id="pass-field" type="password">
+                    </li>
+                </ul>
+                <p>6 or more characters</p>
+                <input type="submit" value="Join Now">
+                <p>Already on LinkedIn? <a href="#">Sign in</a></p>
+            </fieldset>
+        </form>
+        <span class="bold">Search for someone by name</span>
+        <form id="search-user-form">
+            <ul>
+                <li>
+                    <label for="search-first-name-field">First Name</label>
+                    <input id="search-first-name-field" type="text" placeholder="First Name">
+                </li>
+                <li>
+                    <label for="search-last-name-field">Last Name</label>
+                    <input id="search-last-name-field" type="text" placeholder="First Name">
+                </li>
+            </ul>
+            <input type="submit" value="Go">
+        </form>
+    </header>
+</body>
+
+</html>

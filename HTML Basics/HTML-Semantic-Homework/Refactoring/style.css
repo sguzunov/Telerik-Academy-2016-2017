@@ -1,0 +1,19 @@
+#main-navigation {
+    list-style-type: none;
+}
+
+.nav-item {
+    display: inline-block;
+}
+
+.nav-item a {
+    text-decoration: none;
+}
+
+.italic {
+    font-style: italic;
+}
+
+.bold {
+    font-weight: bold;
+}

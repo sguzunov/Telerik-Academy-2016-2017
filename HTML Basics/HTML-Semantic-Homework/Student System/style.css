@@ -1,0 +1,22 @@
+#logo {
+    max-width: 100px;
+}
+
+#welcome-header {
+    display: inline-block;
+}
+
+.students-information {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+.students-information th,
+td {
+    border: 1px solid black;
+}
+
+#main-nav a {
+    text-decoration: none;
+    color: #000;
+}
