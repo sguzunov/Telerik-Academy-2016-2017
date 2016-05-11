@@ -23,63 +23,76 @@ class RemoveElementsFromArray
 
     private static int FindLongestSubsequence(int[] numbers)
     {
-        int n = numbers.Length;
-        int[] sizes = new int[n];
-        int max = 0;
-        for (int i = 0; i < n; i++)
+        int i, j;
+        int l; /* В момента на разглеждане на xi,
+                /* l е дължината на максималната подредица с начало xj: */
+               /* 1) i < j <= n и */
+               /* 2) xi <= xj */
+
+        int[] lns = new int[numbers.Length];
+        int len = 0; /* Максимална (за момента) дължина на подредица */
+        for (i = numbers.Length - 1; i >= 0; i--)
         {
-            max = 0;
-            for (int j = 0; j < i; j++)
+            for (l = 0, j = i + 1; j < numbers.Length; j++)
             {
-                if (numbers[i] > numbers[j] && sizes[j] > max)
+                if (numbers[j] >= numbers[i] && lns[j] > l)
                 {
-                    max = sizes[j];
-                }
-
-                sizes[i] = max + 1;
-            }
-        }
-
-        max = 0;
-        for (int i = 0; i < n; i++)
-        {
-            if (sizes[i] > max)
-            {
-                max = sizes[i];
-            }
-        }
-
-        return max;
-    }
-
-    static public int LongestIncreasingSeq(int[] s)
-    {
-        int[] l = new int[s.Length];  // DP table for max length[i]
-        int[] p = new int[s.Length];  // DP table for predeccesor[i]
-        int max = int.MinValue;
-
-        l[0] = 1;
-
-        for (int i = 0; i < s.Length; i++)
-            p[i] = -1;
-
-        for (int i = 1; i < s.Length; i++)
-        {
-            l[i] = 1;
-            for (int j = 0; j < i; j++)
-            {
-                if (s[j] < s[i] && l[j] + 1 > l[i])
-                {
-                    l[i] = l[j] + 1;
-                    p[i] = j;
-                    if (l[i] > max)
-                        max = l[i];
+                    l = lns[j];
                 }
             }
+
+            lns[i] = l + 1;
+            if (lns[i] > len)
+            {
+                len = lns[i];
+            }
         }
-        return max;
+
+        return len;
     }
 
+    //private static int FindLongestSubsequence(int[] numbers)
+    //{
+    //    int maxSubsequence = 0;
+    //    for (int i = 1; i < numbers.Length; i++)
+    //    {
+    //        int currentMaxSubsequence = 0;
+    //        int right = numbers[i];
+    //        for (int j = 0; j < i; j++)
+    //        {
+    //            currentMaxSubsequence = 0;
+    //            int left = numbers[j];
+    //            if (left <= right)
+    //            {
+    //                int prevNumber = left;
+    //                int max = 1;
+    //                for (int k = j + 1; k < i; k++)
+    //                {
+    //                    int number = numbers[k];
+    //                    if (prevNumber <= number && number <= right)
+    //                    {
+    //                        max++;
+    //                        prevNumber = number;
+    //                    }
+    //                }
+
+    //                if (max > currentMaxSubsequence)
+    //                {
+    //                    currentMaxSubsequence = max;
+    //                }
+    //            }
+
+    //            if (currentMaxSubsequence > maxSubsequence)
+    //            {
+    //                maxSubsequence = currentMaxSubsequence;
+    //            }
+    //        }
+    //    }
+
+    //    return maxSubsequence + 1;
+    //}
+
+    // Resursive.
     //private static void FindLongestSubsequence(int index, int prevElement, int currentSequence, int[] numbers)
     //{
     //    int currentElement = numbers[index];
