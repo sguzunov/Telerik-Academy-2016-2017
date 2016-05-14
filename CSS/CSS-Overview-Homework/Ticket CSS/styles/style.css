@@ -1,0 +1,73 @@
+table,
+head,
+tbody,
+tr,
+td,
+th {
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    font-family: Arial, Sans-Serif;
+}
+
+#ticket {
+    background-color: #595959;
+    width: 500px;
+}
+
+#ticket th {
+    font-size: 1.7em;
+    text-align: left;
+    color: #bbb;
+    font-style: normal;
+}
+
+#ticket .ticket-label {
+    color: #B5C0C6;
+    font-style: italic;
+    padding-left: 10px;
+}
+
+.red-colored {
+    color: #FA0022;
+}
+
+.grey-colored {
+    color: #A6B8BC;
+}
+
+.yellow-colored {
+    color: #E4D987;
+}
+
+.orange-colored {
+    color: #D36A28;
+}
+
+#ticket a {
+    text-decoration: none;
+    text-align: right;
+}
+
+#ticket a:hover {
+    text-decoration: underline;
+}
+
+.link-public-post {
+	padding-left: 220px;
+}
+
+tr td {
+    padding-bottom: 15px;
+}
+
+#circle {
+    display: inline-block;
+    margin-right: 3px;
+    width: 12px;
+    height: 12px;
+    background: #71B47A;
+    -moz-border-radius: 50px;
+    -webkit-border-radius: 50px;
+    border-radius: 50px;
+}
