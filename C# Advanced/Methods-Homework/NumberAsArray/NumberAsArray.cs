@@ -4,64 +4,55 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Numerics;
-using System.Text;
 
-class Program
+class NumberAsArray
 {
-    private static IEnumerable<int> SumArraiesOfNumbers(int[] firstNumber, int[] secondNumber)
+    private static IEnumerable<int> SumArraysOfNumbers(int[] firstNumber, int[] secondNumber)
     {
         int maxLenght = Math.Max(firstNumber.Length, secondNumber.Length);
         int minLenght = Math.Min(firstNumber.Length, secondNumber.Length);
-
-        List<int> result = new List<int>();
-        int remainder = 0;
+        List<int> summedArrays = new List<int>();
+        int saved = 0;
+        int sum = 0;
         for (int i = 0; i < minLenght; i++)
         {
-            int sum = firstNumber[i] + secondNumber[i] + remainder;
-            result.Add(sum % 10);
-            remainder = sum / 10;
+            sum = firstNumber[i] + secondNumber[i] + saved;
+            summedArrays.Add(sum % 10);
+            saved = sum / 10;
         }
 
-        int[] longestArray = firstNumber.Length > secondNumber.Length ? firstNumber : secondNumber;
+        int[] longestNumber = firstNumber.Length > secondNumber.Length ? firstNumber : secondNumber;
         if (maxLenght != minLenght)
         {
-            longestArray[minLenght] = longestArray[minLenght] + remainder;
-            result.Add(longestArray[minLenght]);
-            for (int i = minLenght + 1; i < maxLenght; i++)
+            for (int i = minLenght; i < maxLenght; i++)
             {
-                result.Add(longestArray[i]);
+                sum = longestNumber[i] + saved;
+                summedArrays.Add(sum % 10);
+                saved = sum / 10;
             }
         }
         else
         {
-            if (remainder != 0)
+            if (saved != 0)
             {
-                result.Add(remainder);
+                summedArrays.Add(saved);
             }
         }
 
-        return result;
+        return summedArrays;
     }
 
     static void Main()
     {
         int[] lenghtsOfNumbers = Console.ReadLine().Split(' ').Select(x => int.Parse(x)).ToArray();
 
-        int[] firstNumberAsArray = new int[lenghtsOfNumbers[0]];
-        firstNumberAsArray = Console.ReadLine().Split(' ').Select(x => int.Parse(x)).ToArray();
+        int[] firstNumber = new int[lenghtsOfNumbers[0]];
+        firstNumber = Console.ReadLine().Split(' ').Select(x => int.Parse(x)).ToArray();
 
-        int[] secondNumberAsArray = new int[lenghtsOfNumbers[1]];
-        secondNumberAsArray = Console.ReadLine().Split(' ').Select(x => int.Parse(x)).ToArray();
+        int[] secondNumber = new int[lenghtsOfNumbers[1]];
+        secondNumber = Console.ReadLine().Split(' ').Select(x => int.Parse(x)).ToArray();
 
-        IEnumerable<int> sumedArraies = SumArraiesOfNumbers(firstNumberAsArray, secondNumberAsArray);
+        IEnumerable<int> sumedArraies = SumArraysOfNumbers(firstNumber, secondNumber);
         Console.WriteLine(string.Join(" ", sumedArraies));
-
-        //BigInteger firstNumber = ConvertArrayToNumber(firstNumberAsArray);
-        //BigInteger secondNumber = ConvertArrayToNumber(secondNumberAsArray);
-        //BigInteger sum = firstNumber + secondNumber;
-        //char[] reversedSum = ReverseNumbersDigits(sum);
-
-        //Console.WriteLine(string.Join(" ", sum.ToString().ToArray().Reverse()));
     }
 }
