@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+
+<body>
+    <div id="calculator">
+        <form>
+            <img class="icon" src="images/logo.png" alt="Calculator">
+            <label class="name">Calculator</label>
+            <div class="main-buttons">
+                <input class="main-button" type="image" src="images/minimize.png" 
+                /><input disabled="disabled" class="main-button" type="image" src="images/maximize.png" 
+                /><input class="main-button" type="image" src="images/close.png" />
+            </div>
+            <div class="body">
+                <ul class="menu">
+                    <li><a href="#">View</a></li>
+                    <li><a href="#">Edit</a></li>
+                    <li><a href="#">Help</a></li>
+                </ul>
+                <div class="holder">
+                    <div class="result section clear">
+                        <input type="text" maxlength="16" name="total-result">
+                    </div>
+                    <div class="bits section">
+                        <div class="bytes">
+                            <span>0000</span>
+                            <span>0000</span>
+                            <span>0000</span>
+                            <span>0000</span>
+                            <span>0000</span>
+                            <span>0000</span>
+                            <span>0000</span>
+                            <span>0000</span>
+                        </div>
+                        <div class="bytes">
+                            <span>63</span>
+                            <span>47</span>
+                            <span>32</span>
+                        </div>
+                        <div class="bytes">
+                            <span>0000</span>
+                            <span>0000</span>
+                            <span>1000</span>
+                            <span>0111</span>
+                            <span>0001</span>
+                            <span>1011</span>
+                            <span>1011</span>
+                            <span>0111</span>
+                        </div>
+                        <div class="bytes">
+                            <span>31</span>
+                            <span>15</span>
+                            <span>0</span>
+                        </div>
+                    </div>
+                    <ul class="system section">
+                        <li>
+                            <input type="radio" value="hex" id="hex" name="system">
+                            <label for="hex">Hex</label>
+                        </li>
+                        <li>
+                            <input type="radio" value="hec" id="dec" name="system" checked="checked">
+                            <label for="dec">Dec</label>
+                        </li>
+                        <li>
+                            <input type="radio" value="oct" id="oct" name="system">
+                            <label for="oct">Oct</label>
+                        </li>
+                        <li>
+                            <input type="radio" value="bin" id="bin" name="system">
+                            <label for="bin">Bin</label>
+                        </li>
+                    </ul>
+                    <ul class="data-type section">
+                        <li>
+                            <input type="radio" value="qword" id="qword" name="data-type">
+                            <label for="qword">Qword</label>
+                        </li>
+                        <li>
+                            <input type="radio" value="dword" id="dword" name="data-type" checked="checked">
+                            <label for="dword">Dword</label>
+                        </li>
+                        <li>
+                            <input type="radio" value="word" id="word" name="data-type">
+                            <label for="word">Word</label>
+                        </li>
+                        <li>
+                            <input type="radio" value="byte" id="byte" name="data-type">
+                            <label for="byte">Byte</label>
+                        </li>
+                    </ul>
+                    <div class="buttons">
+                        <!-- 1 -->
+                        <div></div>
+                        <div>
+                            <input type="button" value="Mod">
+                        </div>
+                        <div>
+                            <input type="button" value="A">
+                        </div>
+                        <div>
+                            <input type="button" value="MC">
+                        </div>
+                        <div>
+                            <input type="button" value="MR">
+                        </div>
+                        <div>
+                            <input type="button" value="MS">
+                        </div>
+                        <div>
+                            <input type="button" value="M+">
+                        </div>
+                        <div>
+                            <input type="button" value="M-">
+                        </div>
+                        <!-- 2 -->
+                        <div>
+                            <input type="button" value="(">
+                        </div>
+                        <div>
+                            <input type="button" value=")">
+                        </div>
+                        <div>
+                            <input type="button" value="B">
+                        </div>
+                        <div>
+                            <input type="button" value="&#8592">
+                        </div>
+                        <div>
+                            <input type="button" value="CE">
+                        </div>
+                        <div>
+                            <input type="button" value="C">
+                        </div>
+                        <div>
+                            <input type="button" value="&#177">
+                        </div>
+                        <div>
+                            <input type="button" value="&#8730">
+                        </div>
+                        <!-- 3 -->
+                        <div>
+                            <input type="button" value="Rol">
+                        </div>
+                        <div>
+                            <input type="button" value="RoR">
+                        </div>
+                        <div>
+                            <input type="button" value="C">
+                        </div>
+                        <div>
+                            <input type="button" value="7">
+                        </div>
+                        <div>
+                            <input type="button" value="8">
+                        </div>
+                        <div>
+                            <input type="button" value="9">
+                        </div>
+                        <div>
+                            <input type="button" value="/">
+                        </div>
+                        <div>
+                            <input type="button" value="%">
+                        </div>
+                        <!-- 4 -->
+                        <div>
+                            <input type="button" value="Or">
+                        </div>
+                        <div>
+                            <input type="button" value="Xor">
+                        </div>
+                        <div>
+                            <input type="button" value="D">
+                        </div>
+                        <div>
+                            <input type="button" value="4">
+                        </div>
+                        <div>
+                            <input type="button" value="5">
+                        </div>
+                        <div>
+                            <input type="button" value="6">
+                        </div>
+                        <div>
+                            <input type="button" value="*">
+                        </div>
+                        <div>
+                            <input type="button" value="1/x">
+                        </div>
+                        <!-- 5 -->
+                        <div>
+                            <input type="button" value="Lsh">
+                        </div>
+                        <div>
+                            <input type="button" value="Rsh">
+                        </div>
+                        <div>
+                            <input type="button" value="E">
+                        </div>
+                        <div>
+                            <input type="button" value="1">
+                        </div>
+                        <div>
+                            <input type="button" value="2">
+                        </div>
+                        <div>
+                            <input type="button" value="3">
+                        </div>
+                        <div>
+                            <input type="button" value="-">
+                        </div>
+                        <div>
+                            <input type="button" value="=">
+                        </div>
+                        <!-- 6 -->
+                        <div>
+                            <input type="button" value="Not">
+                        </div>
+                        <div>
+                            <input type="button" value="And">
+                        </div>
+                        <div>
+                            <input type="button" value="F">
+                        </div>
+                        <div>
+                            <input type="button" value="0">
+                        </div>
+                        <div>
+                            <input type="button" value=".">
+                        </div>
+                        <div>
+                            <input type="button" value="+">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>
