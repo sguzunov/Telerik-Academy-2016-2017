@@ -1,0 +1,62 @@
+body, section, header, img, form, label, input, article, h4, p{
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-size: 14px;
+    margin-left: 1px;
+}
+
+.left {
+    float: left;
+}
+
+.clearfix:after { 
+   content: "."; 
+   visibility: hidden; 
+   display: block; 
+   height: 0; 
+   clear: both;
+}
+
+.members-form {
+    border-radius: 7px;
+    background-color: #3B3B3B;
+    max-width: 662px;
+}
+
+.members-form header {
+    border-radius: inherit;    
+    background-color: #343434;
+    padding: 7px 8px 15px 12px;
+}
+
+.members-form header .go-btn {
+    border: 0;
+    background: url(../images/go-btn.png);
+    color: #fff;
+    padding: 5px 17px;
+}
+
+.members-form .about {
+    padding: 0 0 12px 12px;
+}
+
+.members-form .about h4 {
+    color: #FCD61B;
+    font-weight: lighter;
+    font-size: 2em;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.members-form .about p {
+    color: #ADADAD;
+    font-size: 1.1em;
+}
+
+.members-form .about p strong {
+    font-weight: normal;
+    color: #FAFAFA;
+}

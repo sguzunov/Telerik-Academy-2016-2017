@@ -1,0 +1,65 @@
+body, section, form,h3,div,img,p,input {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-size: 14px;
+    font-family: sans-serif;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.clearfix:after { 
+   content: "."; 
+   visibility: hidden; 
+   display: block; 
+   height: 0; 
+   clear: both;
+}
+
+.categories {
+    border-radius: 5px;
+    background-color: #eee;
+    max-width: 421px;
+    padding: 15px 9px 26px 12px;
+}
+
+.categories h3 {
+    font-size: 1.4em;
+    font-weight: lighter;
+}
+
+.categories .category {
+    border: 1px solid #999;
+    background-color: #fff;
+    padding: 15px;
+    margin-top: 40px;
+}
+
+.categories .category img {
+  float: left;
+  margin-right: 15px
+}
+
+.categories .category input[type=button] {
+    border: 0;
+    color: #fff;
+    padding: 5px 20px;
+}
+
+.listen-btn {
+    background: url("../images/listen-btn-bg.png");
+}
+
+.add-btn {
+    background: url("../images/add-btn-bg.png");
+}
+
+.buttons {
+    display: inline-block;
+    margin-left: 97px;
+    margin-top: 29px;
+}
