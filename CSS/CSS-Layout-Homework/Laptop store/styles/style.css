@@ -94,14 +94,10 @@ a {
     margin-top: 20px;
 }
 
-.options {
-	vertical-align: center;
-}
-
-.options .option-group {
-	/*margin-bottom: 50px;	*/
-}
-
 .options input[type=range] {
-	display: block
+	display: block;
+}
+
+.options {
+    text-align: center;
 }

@@ -1,0 +1,96 @@
+html,
+body,
+div,
+nav,
+img,
+ul,
+li,
+section,
+header,
+article,
+h1,
+h2,
+h3,
+p,
+button {
+    margin: 0;
+    padding: 0
+}
+
+.clearfix:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.left {
+    float: left
+}
+
+.right {
+    float: right
+}
+
+a {
+    color: inherit;
+    text-decoration: none
+}
+
+.previous-btn, .next-btn {
+	border: 1px solid #000;
+	background-color: #fff;
+}
+
+.previous-btn {
+	background: url("../images/left-arrow.png");
+	background-repeat: no-repeat;
+}
+
+#screen {
+    border: 1px solid #000;
+    max-width: 791px;
+    background-color: #F1F1F1;
+    font-size: 12px;
+    font-family: Arial, serif;
+}
+
+#main-nav, aside {
+    width: 18%
+}
+
+#main-nav .nav-item {
+    padding-left: 3px;
+    margin-top: 16px
+}
+
+#main-nav .nav-item li a {
+    font-weight: lighter
+}
+
+#main-nav .nav-item li span {
+    color: #870000
+}
+
+#main-content {
+    border: 1px solid #000;
+    width: 60%;
+    background-color: #fff;
+    padding: 4px;
+}
+
+#main-content header {
+	border-bottom: 2px solid #909090;
+	padding-bottom: 6px;
+}
+
+#main-content header h1 {
+	margin-top: 10px;
+	margin-bottom: 10px
+}

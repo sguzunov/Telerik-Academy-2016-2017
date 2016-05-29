@@ -1,42 +1,75 @@
-body, section, header, img, form, label, input, article, h4, p{
+body,
+section,
+header,
+img,
+form,
+label,
+input,
+article,
+h4,
+p {
     margin: 0;
-    padding: 0;
+    padding: 0
 }
 
 body {
     font-size: 14px;
-    margin-left: 1px;
+    margin-left: 1px
 }
 
 .left {
-    float: left;
+    float: left
 }
 
-.clearfix:after { 
-   content: "."; 
-   visibility: hidden; 
-   display: block; 
-   height: 0; 
-   clear: both;
+.clearfix:after {
+    content: ".";
+    visibility: hidden;
+    display: block;
+    height: 0;
+    clear: both
 }
 
 .members-form {
     border-radius: 7px;
     background-color: #3B3B3B;
-    max-width: 662px;
+    max-width: 662px
 }
 
 .members-form header {
-    border-radius: inherit;    
+    border-radius: inherit;
     background-color: #343434;
-    padding: 7px 8px 15px 12px;
+    padding: 7px 8px 15px 12px
+}
+
+.members-form header form {
+    float: right;
+    margin-top: 8px
+}
+
+.members-form header form label {
+    color: white;
+    font-size: 1.7em
+}
+
+.members-form header input[type="text"] {
+    max-width: 147px;
+    height: 15px;
+    margin-left: 15px;
+    margin-right: 20px
+}
+
+.members-form header input[type="email"] {
+    max-width: 147px;
+    height: 20px;
+    margin-right: 20px
 }
 
 .members-form header .go-btn {
-    border: 0;
+    border: 0.5px solid #fff;
+    border-radius: 10px;
     background: url(../images/go-btn.png);
     color: #fff;
-    padding: 5px 17px;
+    padding: 5px 17px
 }
 
 .members-form .about {
@@ -48,15 +81,15 @@ body {
     font-weight: lighter;
     font-size: 2em;
     margin-top: 15px;
-    margin-bottom: 15px;
+    margin-bottom: 15px
 }
 
 .members-form .about p {
     color: #ADADAD;
-    font-size: 1.1em;
+    font-size: 1.1em
 }
 
 .members-form .about p strong {
     font-weight: normal;
-    color: #FAFAFA;
+    color: #FAFAFA
 }
