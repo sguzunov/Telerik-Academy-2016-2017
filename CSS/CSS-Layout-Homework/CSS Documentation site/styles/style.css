@@ -8,9 +8,12 @@ li,
 section,
 header,
 article,
+input,
+form,
 h1,
 h2,
 h3,
+h4,
 p,
 button {
     margin: 0;
@@ -43,14 +46,27 @@ a {
     text-decoration: none
 }
 
-.previous-btn, .next-btn {
-	border: 1px solid #000;
-	background-color: #fff;
+.previous-btn {
+    background: url("../images/left-arrow.png");
+    background-position: left 3px center;
 }
 
-.previous-btn {
-	background: url("../images/left-arrow.png");
-	background-repeat: no-repeat;
+.next-btn {
+    background: url("../images/right-arrow.png");
+    background-position: right 3px center;
+}
+
+.previous-btn,
+.next-btn {
+    width: 96px;
+    border: 1px solid #000;
+    background-color: #fff;
+    background-repeat: no-repeat;
+}
+
+.section-header {
+    color: #fff;
+    background-color: #808080;
 }
 
 #screen {
@@ -59,10 +75,17 @@ a {
     background-color: #F1F1F1;
     font-size: 12px;
     font-family: Arial, serif;
+    margin-top: 3px;
+    padding: 2px;
+    font-family: Consolas;
 }
 
-#main-nav, aside {
+#main-nav {
     width: 18%
+}
+
+.aside {
+    width: 20%;
 }
 
 #main-nav .nav-item {
@@ -81,16 +104,100 @@ a {
 #main-content {
     border: 1px solid #000;
     width: 60%;
+    height: 90%;
     background-color: #fff;
     padding: 4px;
 }
 
-#main-content header {
-	border-bottom: 2px solid #909090;
-	padding-bottom: 6px;
+#main-content > header {
+    border-bottom: 2px solid #909090;
+    padding-bottom: 6px;
+    margin-bottom: 6px;
 }
 
-#main-content header h1 {
-	margin-top: 10px;
-	margin-bottom: 10px
+#main-content > header h1 {
+    margin-top: 10px;
+    margin-bottom: 10px
+}
+
+#main-content > article.paragraph {
+    padding-bottom: 10px;
+}
+
+#main-content > article.paragraph:first-of-type {
+    padding-bottom: 24px;
+}
+
+#main-content > article.paragraph:first-of-type p {
+    font-weight: bold;
+}
+
+#main-content > article.paragraph .section-header {
+    padding-left: 5px;
+    font-size: 1em;
+    font-weight: normal;
+}
+
+#main-content > article.paragraph .css-image {
+    float: left;
+    margin-top: 15px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+#main-content > article.paragraph p {
+    margin-top: 13px;
+    margin-bottom: 13px
+}
+
+#main-content > article.paragraph > footer a {
+    color: #961917;
+    text-decoration: underline;
+}
+
+#main-content > footer {
+    border-top: 2px solid #909090;
+    border-bottom: 2px solid #909090;
+    padding-top: 5px;
+    padding-bottom: 6px;
+    margin-bottom: 24px;
+}
+
+.aside section {
+    text-align: center;
+    background-color: #fff;
+}
+
+.aside section h4.section-header {
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.aside section input[type=text].search-field {
+    max-width: 70%;
+}
+
+.aside section .links {
+    border: 1px solid #9E9E9E;
+    padding: 4px 12px;
+}
+
+.aside section .links .styles-btn {
+    margin-left: 15px;
+    padding: 7px 16px;
+    display: block;
+    border: 1px solid #679BC2;
+    color: #23C7FF;
+    background: rgb(175, 225, 250);
+    background: -moz-linear-gradient(left, rgba(175, 225, 250, 1) 0%, rgba(147, 212, 246, 1) 1%, rgba(188, 229, 249, 1) 6%, rgba(190, 230, 249, 1) 7%, rgba(190, 230, 249, 1) 94%, rgba(151, 213, 246, 1) 99%, rgba(146, 212, 246, 1) 100%);
+    background: -webkit-linear-gradient(left, rgba(175, 225, 250, 1) 0%, rgba(147, 212, 246, 1) 1%, rgba(188, 229, 249, 1) 6%, rgba(190, 230, 249, 1) 7%, rgba(190, 230, 249, 1) 94%, rgba(151, 213, 246, 1) 99%, rgba(146, 212, 246, 1) 100%);
+    background: linear-gradient(to right, rgba(175, 225, 250, 1) 0%, rgba(147, 212, 246, 1) 1%, rgba(188, 229, 249, 1) 6%, rgba(190, 230, 249, 1) 7%, rgba(190, 230, 249, 1) 94%, rgba(151, 213, 246, 1) 99%, rgba(146, 212, 246, 1) 100%);
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#afe1fa', endColorstr='#92d4f6', GradientType=1);
+}
+
+#main-content > article.paragraph > footer a,
+.aside section .links a {
+    color: #961917;
+    text-decoration: underline;
+    font-weight: bold;
 }
