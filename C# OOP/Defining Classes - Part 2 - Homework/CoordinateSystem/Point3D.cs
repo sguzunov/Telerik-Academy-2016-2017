@@ -32,7 +32,7 @@
 
         public override string ToString()
         {
-            return $"[Z={this.X}, Y={this.Y}, Z={this.Z}]";
+            return $"[X={this.X}, Y={this.Y}, Z={this.Z}]";
         }
     }
 }
