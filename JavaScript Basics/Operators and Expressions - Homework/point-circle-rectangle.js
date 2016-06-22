@@ -12,10 +12,16 @@ function solve(args) {
         RECTANGLE_LEFT = -1,
         RECTANGLE_WIDTH = 6,
         RECTANGLE_HEIGHT = 2,
-        result = '';
+        result = '',
+        xDistanceToCircleCenter,
+        yDistanceToCircleCenter,
+        distanceToCircleCenter;
 
-    isInCircle = Math.sqrt((Math.abs(x * x)) + (Math.abs(y * y)) + 1 === CIRCLE_RADIUS);
-    isInRectangle = x >= RECTANGLE_LEFT && x <= RECTANGLE_LEFT + RECTANGLE_WIDTH && y >= RECTANGLE_TOP && y <= RECTANGLE_TOP + RECTANGLE_HEIGHT;
+    xDistanceToCircleCenter = Math.abs(x - CIRCLE_X);
+    yDistanceToCircleCenter = Math.abs(y - CIRCLE_Y);
+    distanceToCircleCenter = Math.sqrt(xDistanceToCircleCenter * xDistanceToCircleCenter + yDistanceToCircleCenter * yDistanceToCircleCenter);
+    isInCircle = distanceToCircleCenter <= CIRCLE_RADIUS;
+    isInRectangle = x >= RECTANGLE_LEFT && x <= RECTANGLE_LEFT + RECTANGLE_WIDTH && y <= RECTANGLE_TOP && y >= RECTANGLE_TOP - RECTANGLE_HEIGHT;
 
     if (isInCircle) {
         result += 'inside circle';
@@ -33,4 +39,7 @@ function solve(args) {
     return result;
 }
 
+console.log(solve([2.5, 2]));
 console.log(solve([0, 1]));
+console.log(solve([2.5, 1]));
+console.log(solve([1, 2]));
