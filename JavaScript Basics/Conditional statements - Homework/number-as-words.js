@@ -3,28 +3,32 @@ function solve(args) {
 
     var number = +args[0],
         digit,
-        numberAsWord,
+        numberAsWord = '',
         toLower = false,
-        digitsAsWord = ['One', 'Two', 'Three', 'Four', 'Five', 'Six', 'Seven', 'Eight', 'Nine'],
+        digitsAsWord = ['Zero', 'One', 'Two', 'Three', 'Four', 'Five', 'Six', 'Seven', 'Eight', 'Nine'],
         numbersAsWordBetween10And20 = [
             'Ten', 'Eleven', 'Twelve', 'Thirteen', 'Fourteen', 'Fifteen',
-            'Sixteen', 'Seventeen', 'Eighteen', 'Nineteen', 'Twenty'
+            'Sixteen', 'Seventeen', 'Eighteen', 'Nineteen'
         ];
 
-    if (number > 99) {
-        digit = number / 100;
-        number %= 100;
+    if (number >= 100) {
+        digit = (number / 100) | 0;
+        number = number % 100;
         toLower = true;
-        numberAsWord += digitsAsWord[digit] + ' hundred and';
+        numberAsWord += digitsAsWord[digit - 1] + ' hundred';
     }
 
-    if (number >= 10 && number <= 20) {
+    if (number >= 10 && number <= 19) {
         if (toLower) {
-            numberAsWord += numbersAsWordBetween10And20[number % 10].toLowerCase();
+            numberAsWord += ' and ' + numbersAsWordBetween10And20[number % 10].toLowerCase();
         } else {
             numberAsWord += numbersAsWordBetween10And20[number % 10];
         }
-    } else {
-
+    } else if (number >= 20 && number <= 99) {
+        
     }
+
+    return numberAsWord;
 }
+
+console.log(solve([15]));
