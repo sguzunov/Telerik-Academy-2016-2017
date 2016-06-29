@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Lexicographically smallest</title>
+</head>
+
+<body>
+    <div id="properties"></div>
+    <!--<script src="lexicographically-smallest.js"></script>-->
+    <script>
+        (function() {
+            'use strict';
+            var docMinProperty = '',
+                docMaxProperty = '',
+                windowMinProperty = '',
+                windowMaxProperty = '',
+                navigatorMinProperty = '',
+                navigatorMaxProperty = '';
+
+            for (let prop in document) {
+                if (docMinProperty > prop) {
+                    docMinProperty = prop;
+                }
+
+                if (docMaxProperty < prop) {
+                    docMaxProperty = prop;
+                }
+            }
+
+            for (let prop in window) {
+                if (windowMinProperty > prop) {
+                    windowMinProperty = prop;
+                }
+
+                if (windowMaxProperty < prop) {
+                    windowMaxProperty = prop;
+                }
+            }
+
+            for (let prop in navigator) {
+                if (navigatorMinProperty > prop) {
+                    navigatorMinProperty = prop;
+                }
+
+                if (navigatorMaxProperty < prop) {
+                    navigatorMaxProperty = prop;
+                }
+            }
+
+            var propertiesDom = document.getElementById('properties');
+            propertiesDom.innerHTML += 'document max property: ' + docMaxProperty + '<br />';
+            propertiesDom.innerHTML += 'document min property: ' + docMinProperty + '<br />';
+            propertiesDom.innerHTML += 'window max property: ' + windowMaxProperty + '<br />';
+            propertiesDom.innerHTML += 'window min property: ' + windowMinProperty + '<br />';
+            propertiesDom.innerHTML += 'navigator max property: ' + navigatorMaxProperty + '<br />';
+            propertiesDom.innerHTML += 'navigator min property: ' + navigatorMinProperty + '<br />';
+        }());
+    </script>
+</body>
+
+</html>
