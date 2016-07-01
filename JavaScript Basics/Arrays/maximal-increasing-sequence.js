@@ -1,22 +1,23 @@
 function solve(args) {
     'use strict';
 
-    var inputSpited = args[0].split('\n').map(function(x) {
+    var inputSplited = args[0].split('\n').map(function(x) {
             return +x;
         }),
-        maxSequence = 1,
+        maxSequence = 0,
         currentSequence = 1,
-        n = inputSpited[0],
-        maxChar = inputSpited[1],
-        i;
+        prevChar = inputSplited[1],
+        i,
+        n = inputSplited[0];
 
     for (i = 2; i < n; i += 1) {
-        if (inputSpited[i] === maxChar) {
+        if (inputSplited[i] > prevChar) {
             currentSequence += 1;
         } else {
-            maxChar = inputSpited[i];
             currentSequence = 1;
         }
+
+        prevChar = inputSplited[i];
 
         if (currentSequence > maxSequence) {
             maxSequence = currentSequence;
@@ -25,5 +26,3 @@ function solve(args) {
 
     return maxSequence;
 }
-
-solve(['10', '2', '1', '1', '2', '3', '3', '2', '2', '2', '1']);

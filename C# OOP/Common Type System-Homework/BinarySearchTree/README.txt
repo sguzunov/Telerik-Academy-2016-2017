@@ -1,0 +1,1 @@
+﻿The class is not implemented fully. No time for some of the tasks.

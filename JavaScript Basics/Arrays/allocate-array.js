@@ -2,10 +2,10 @@ function solve(args) {
     'use strict';
 
     var count = +args[0],
-        numbers = new Array(count),
+        numbers = [],
         i;
 
-    for (i = 0; i < numbers.length; i += 1) {
+    for (i = 0; i < count; i += 1) {
         numbers[i] = i * 5;
     }
 
