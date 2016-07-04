@@ -9,7 +9,7 @@
             Person person;
 
             // Throws InvalidRangeException.
-            // person = new Person("John", "Throw", -8);
+            person = new Person("John", "Throw", -8);
 
             // Throws InvalidRangeException.
             // person = new Person("John", "Throw", 151);
