@@ -28,16 +28,21 @@
             Assert.IsNotNull(deck.TrumpCard);
         }
 
-        [Test]
-        public void GetNextCard_WhenDrawOneCardFromANewDeck_ShouldHave23CardsLeft()
+        [TestCase(1, 23)]
+        [TestCase(10, 14)]
+        [TestCase(23, 1)]
+        public void GetNextCard_WhenDrawCardsFromANewDeck_ShouldHaveCorrectNumberOfCards(int drawnCards, int leftCards)
         {
             var deck = new Deck();
-            int expectedCardsCount = 23;
 
-            deck.GetNextCard();
+            for (int i = 0; i < drawnCards; i++)
+            {
+                deck.GetNextCard();
+            }
+
             int actualCardsCount = deck.CardsLeft;
 
-            Assert.AreEqual(expectedCardsCount, actualCardsCount);
+            Assert.AreEqual(leftCards, actualCardsCount);
         }
 
         [Test]
@@ -72,7 +77,7 @@
         }
 
         [Test]
-        public void GetNextCard_WhenDeckIsEmpty_Throws()
+        public void GetNextCard_WhenDeckIsEmpty_ThrowsException()
         {
             var deck = new Deck();
             for (int i = 0; i < 24; i++)
@@ -102,7 +107,7 @@
         }
 
         [Test]
-        public void TrumpCard_ShouldBeTheFirstCardForANewDeck()
+        public void TrumpCard_ShouldBeTheFirstCardForDeck()
         {
             var deck = new Deck();
             for (int i = 0; i < 23; i++)
@@ -114,7 +119,7 @@
         }
 
         [Test]
-        public void ChangeTrumpCard_ShouldChangeTrumpCardWithThePassedCard()
+        public void ChangeTrumpCard_ShouldChangeTrumpCardCorrectly()
         {
             var deck = new Deck();
             var newTrumpCard = new Card(CardSuit.Club, CardType.Ace);
