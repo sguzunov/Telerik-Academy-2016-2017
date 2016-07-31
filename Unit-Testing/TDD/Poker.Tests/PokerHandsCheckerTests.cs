@@ -349,24 +349,9 @@
             Assert.IsFalse(handsChecker.IsTwoPair(hand));
         }
 
+        // IsThreeOfAKind
         [Test]
-        public void IsThreeOfAKind_WhenThreeOfOneRankAndTwoOfOtherRanks_ReturnsTrue()
-        {
-            var cards = new List<ICard>
-            {
-                new Card(CardFace.Jack, CardSuit.Clubs),
-                new Card(CardFace.Seven, CardSuit.Diamonds),
-                new Card(CardFace.Five, CardSuit.Hearts),
-                new Card(CardFace.Five, CardSuit.Spades),
-                new Card(CardFace.Five, CardSuit.Clubs)
-            };
-            var hand = new Hand(cards);
-
-            Assert.IsTrue(handsChecker.IsThreeOfAKind(hand));
-        }
-
-        [Test]
-        public void IsThreeOfAKind_WhenThreeOfOneRankAndAPairOfAnotherRanks_ReturnsFalse()
+        public void IsThreeOfAKind_WhenThreeOfOneKindAndTwoOfOtherKind_ReturnsFalse()
         {
             var cards = new List<ICard>
             {
@@ -381,21 +366,21 @@
             Assert.IsFalse(handsChecker.IsThreeOfAKind(hand));
         }
 
-        //[Test]
-        //public void IsThreeOfAKind_WhenThreeOfOneRankAndAPairOfAnotherRanks_ReturnsFalse()
-        //{
-        //    var cards = new List<ICard>
-        //    {
-        //        new Card(CardFace.Seven, CardSuit.Clubs),
-        //        new Card(CardFace.Seven, CardSuit.Diamonds),
-        //        new Card(CardFace.Five, CardSuit.Hearts),
-        //        new Card(CardFace.Five, CardSuit.Spades),
-        //        new Card(CardFace.Five, CardSuit.Clubs)
-        //    };
-        //    var hand = new Hand(cards);
+        [Test]
+        public void IsThreeOfAKind_WhenThreeOfOneKindAndTwoOfDifferentKinds_ReturnsTrue()
+        {
+            var cards = new List<ICard>
+            {
+                new Card(CardFace.Nine, CardSuit.Clubs),
+                new Card(CardFace.Seven, CardSuit.Diamonds),
+                new Card(CardFace.Five, CardSuit.Hearts),
+                new Card(CardFace.Five, CardSuit.Spades),
+                new Card(CardFace.Five, CardSuit.Clubs)
+            };
+            var hand = new Hand(cards);
 
-        //    Assert.IsFalse(handsChecker.IsThreeOfAKind(hand));
-        //}
+            Assert.IsTrue(handsChecker.IsThreeOfAKind(hand));
+        }
 
         // IsFullHouse
         [Test]

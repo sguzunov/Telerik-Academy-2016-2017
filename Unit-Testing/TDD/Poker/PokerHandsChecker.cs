@@ -111,7 +111,14 @@
 
         public bool IsThreeOfAKind(IHand hand)
         {
-            throw new NotImplementedException();
+            if (!this.IsValidHand(hand))
+            {
+                return false;
+            }
+
+            var cardGroupedByFace = hand.Cards.GroupBy(x => x.Face);
+            bool isThreeOfAKind = cardGroupedByFace.Count() == 3 && cardGroupedByFace.Any(g => g.Count() == 3);
+            return isThreeOfAKind;
         }
 
         public bool IsTwoPair(IHand hand)
