@@ -35,7 +35,7 @@
         protected readonly IDictionary<string, IProduct> products;
 
         public CosmeticsEngine(
-            ICosmeticsFactory factory, 
+            ICosmeticsFactory factory,
             IShoppingCart shoppingCart)
         {
             this.factory = factory;
