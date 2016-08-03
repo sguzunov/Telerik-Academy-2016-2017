@@ -8,6 +8,7 @@
     using Contracts;
     using Controllers;
     using Models;
+    using System.Linq;
 
     [TestFixture]
     public class CarsControllerMyTests
@@ -17,7 +18,7 @@
             new Car { Id = 1, Make = "Audi", Model = "A5", Year = 2005 },
             new Car { Id = 2, Make = "BMW", Model = "325i", Year = 2008 },
             new Car { Id = 3, Make = "BMW", Model = "330d", Year = 2007 },
-            new Car { Id = 4, Make = "Opel", Model = "Astra", Year = 2010 },
+            new Car { Id = 4, Make = "Opel", Model = "Astra", Year = 2010 }
         };
         private readonly Car ValidCar = new Car()
         {
@@ -45,7 +46,7 @@
 
             var result = (ICollection<Car>)controller.Index().Model;
 
-            Assert.AreEqual(fakeData.Count, result.Count);
+            Assert.AreEqual(this.fakeData.Count, result.Count);
         }
 
         [Test]
@@ -150,15 +151,63 @@
             var carsRepoMock = new Mock<ICarsRepository>();
             var controller = new CarsController(carsRepoMock.Object);
             carsRepoMock.Setup(x => x.GetById(It.IsAny<int>())).Returns(ValidCar);
+            int validId = 1;
 
-            var model = (Car)controller.Details(1);
+            var model = (Car)controller.Details(validId).Model;
             Assert.IsNotNull(model);
             Assert.AreEqual(model.Id, ValidCar.Id);
             Assert.AreEqual(model.Make, ValidCar.Make);
             Assert.AreEqual(model.Model, ValidCar.Model);
             Assert.AreEqual(model.Year, ValidCar.Year);
         }
-        
-                
+
+        [Test]
+        public void Search_ValidCondition_ShouldReturnAViewWithData()
+        {
+            var carsRepoMock = new Mock<ICarsRepository>();
+            var controller = new CarsController(carsRepoMock.Object);
+            ICollection<Car> data = fakeData.Where(d => d.Make == "Audi").ToList();
+            carsRepoMock.Setup(x => x.Search(It.IsAny<string>())).Returns(data);
+
+            var foundData = (ICollection<Car>)controller.Search("condition").Model;
+            Assert.AreEqual(data.Count, foundData.Count);
+            Assert.AreEqual(1, foundData.First().Id);
+            Assert.AreEqual("Audi", foundData.First().Make);
+            Assert.AreEqual("A5", foundData.First().Model);
+            Assert.AreEqual(2005, foundData.First().Year);
+        }
+
+        [Test]
+        public void Sort_InvalidParameterPassed_ThrowsException()
+        {
+            var carsRepoMock = new Mock<ICarsRepository>();
+            var controller = new CarsController(carsRepoMock.Object);
+
+            Assert.Throws<ArgumentException>(() => controller.Sort("some param"));
+        }
+
+        [Test]
+        public void Sort_ByMake_ReturnsAViewWithAllData()
+        {
+            var carsRepoMock = new Mock<ICarsRepository>();
+            var controller = new CarsController(carsRepoMock.Object);
+            carsRepoMock.Setup(x => x.SortedByMake()).Returns(fakeData);
+
+            var result = controller.Sort("make").Model as ICollection<Car>;
+
+            Assert.AreEqual(4, result.Count);
+        }
+
+        [Test]
+        public void Sort_ByYear_ReturnsAViewWithAllData()
+        {
+            var carsRepoMock = new Mock<ICarsRepository>();
+            var controller = new CarsController(carsRepoMock.Object);
+            carsRepoMock.Setup(x => x.SortedByYear()).Returns(fakeData);
+
+            var result = controller.Sort("year").Model as ICollection<Car>;
+
+            Assert.AreEqual(4, result.Count);
+        }
     }
 }
