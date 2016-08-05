@@ -7,7 +7,6 @@
 
     using Cosmetics.Common;
     using Cosmetics.Contracts;
-    using Cosmetics.Products;
 
     internal class CosmeticsEngine : IEngine
     {

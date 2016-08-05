@@ -26,7 +26,7 @@
 
         public string Name
         {
-            get 
+            get
             {
                 return this.name;
             }
@@ -55,7 +55,7 @@
         public decimal Price { get; protected set; }
 
         public GenderType Gender { get; private set; }
-        
+
         public virtual string Print()
         {
             var result = new StringBuilder();

@@ -83,7 +83,7 @@
   <ItemGroup>
     <Compile Include="CommandTests.cs" />
     <Compile Include="CosmeticsEngineTests.cs" />
-    <Compile Include="Mocks\EngineMock.cs" />
+    <Compile Include="Fakes\EngineFake.cs" />
     <Compile Include="ValidatorTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

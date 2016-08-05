@@ -4,9 +4,9 @@ using Cosmetics.Engine;
 
 namespace Cosmetics.Test.Mocks
 {
-    internal class EngineMock : CosmeticsEngine
+    internal class EngineFake : CosmeticsEngine
     {
-        public EngineMock(ICosmeticsFactory factory, IShoppingCart shoppingCart)
+        public EngineFake(ICosmeticsFactory factory, IShoppingCart shoppingCart)
             : base(factory, shoppingCart)
         {
         }
