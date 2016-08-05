@@ -5,7 +5,7 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cosmetics", "Cosmetics\Cosmetics.csproj", "{B005C0B3-5C89-45A7-9BE1-FAB966806F40}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cosmetics.Test", "Cosmetics.Test\Cosmetics.Test.csproj", "{3B8B5D01-995D-45FF-9873-C225025F7FB8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cosmetics.UnitTests", "Cosmetics.Test\Cosmetics.UnitTests.csproj", "{3B8B5D01-995D-45FF-9873-C225025F7FB8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

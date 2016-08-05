@@ -7,8 +7,8 @@
     <ProjectGuid>{3B8B5D01-995D-45FF-9873-C225025F7FB8}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Cosmetics.Test</RootNamespace>
-    <AssemblyName>Cosmetics.Test</AssemblyName>
+    <RootNamespace>Cosmetics.UnitTests</RootNamespace>
+    <AssemblyName>Cosmetics.UnitTests</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -83,6 +83,7 @@
   <ItemGroup>
     <Compile Include="CommandTests.cs" />
     <Compile Include="CosmeticsEngineTests.cs" />
+    <Compile Include="CosmeticsFactoryTests.cs" />
     <Compile Include="Fakes\EngineFake.cs" />
     <Compile Include="ValidatorTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
