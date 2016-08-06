@@ -6,8 +6,8 @@ namespace Cosmetics.Test.Mocks
 {
     internal class EngineFake : CosmeticsEngine
     {
-        public EngineFake(ICosmeticsFactory factory, IShoppingCart shoppingCart)
-            : base(factory, shoppingCart)
+        public EngineFake(ICosmeticsFactory factory, IShoppingCart shoppingCart, ICommandProvider commandProvider)
+            : base(factory, shoppingCart, commandProvider)
         {
         }
 

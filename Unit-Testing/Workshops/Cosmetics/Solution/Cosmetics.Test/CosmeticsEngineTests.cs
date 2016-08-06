@@ -16,161 +16,233 @@
     public class CosmeticsEngineTests
     {
         [Test]
-        public void Start_InvalidCommandIsRead_ShouldThrows()
+        public void Start_CorrectCreateCategoryCommandIsPassed_ShouldAddANewCategoryToList()
         {
-            var factoryMock = CreateFactoryMock();
-            var cartMock = CreateShoppingCartMock();
-            var engine = new CosmeticsEngine(factoryMock.Object, cartMock.Object);
-            string command = "command   ";
+            // Arrange
+            string categoryName = "ForMale";
 
-            Console.SetIn(new StringReader(command));
-            Assert.Throws<ArgumentNullException>(() => engine.Start());
+            var fakeCart = CreateShoppingCartFake();
+            var fakeFactory = CreateFactoryFake();
+            var fakeCommandProvider = CreateCommandProviderFake();
+
+            var fakeCommand = new Mock<ICommand>();
+            var fakeCategory = new Mock<ICategory>();
+
+            fakeCommand.SetupGet(x => x.Name).Returns("CreateCategory");
+            fakeCommand.SetupGet(x => x.Parameters).Returns(new List<string> { categoryName });
+            fakeCommandProvider.Setup(x => x.ReadCommands()).Returns(new List<ICommand> { fakeCommand.Object });
+            fakeCategory.SetupGet(x => x.Name).Returns(categoryName);
+            fakeFactory.Setup(x => x.CreateCategory(It.IsAny<string>())).Returns(fakeCategory.Object);
+
+            var fakeEngine = new EngineFake(fakeFactory.Object, fakeCart.Object, fakeCommandProvider.Object);
+
+            // Act
+            fakeEngine.Start();
+
+            // Assert
+            Assert.AreEqual(1, fakeEngine.Categories.Count);
+            Assert.IsTrue(fakeEngine.Categories.ContainsKey(categoryName));
         }
 
         [Test]
-        public void Start_CreateCategoryCommand_ShouldAddToCategoriesSet()
+        public void Start_CorrectAddToCategoryCommandIsPassed_ShouldCallCategoryAddCosmeticsMethod()
         {
-            var factoryMock = CreateFactoryMock();
-            var cartMock = CreateShoppingCartMock();
-            factoryMock.Setup(x => x.CreateCategory(It.IsAny<string>())).Returns(It.IsAny<ICategory>());
-            var engineFake = new EngineFake(factoryMock.Object, cartMock.Object);
-            string command = "CreateCategory ForMale";
+            string categoryName = "ForMale";
+            string productName = "Cool";
 
-            Console.SetIn(new StringReader(command));
-            engineFake.Start();
+            var fakeFactory = CreateFactoryFake();
+            var fakeCart = CreateShoppingCartFake();
+            var fakeCommandProvier = CreateCommandProviderFake();
 
-            Assert.AreEqual(1, engineFake.Categories.Count);
+            var fakeCommand = new Mock<ICommand>();
+            var fakeCategory = new Mock<ICategory>();
+            var fakeEngine = new EngineFake(fakeFactory.Object, fakeCart.Object, fakeCommandProvier.Object);
+
+            fakeEngine.Categories.Add(categoryName, fakeCategory.Object);
+            fakeEngine.Products.Add(productName, It.IsAny<IProduct>());
+
+            fakeCommand.SetupGet(x => x.Name).Returns("AddToCategory");
+            fakeCommand.SetupGet(x => x.Parameters).Returns(new List<string> { categoryName, productName });
+            fakeCommandProvier.Setup(x => x.ReadCommands()).Returns(new List<ICommand> { fakeCommand.Object });
+            fakeCategory.Setup(x => x.AddCosmetics(It.IsAny<IProduct>())).Verifiable();
+
+            fakeEngine.Start();
+
+            fakeCategory.Verify(x => x.AddCosmetics(It.IsAny<IProduct>()), Times.Once);
         }
 
         [Test]
-        public void Start_AddToCategoryCommand_ShouldAddSelectedProductToRespectiveCategory()
+        public void Start_CorrectRemoveFromCategoryCommandIsPassed_ShouldCallCategoryRemoveCosmeticsMethod()
         {
-            var factoryMock = CreateFactoryMock();
-            var cartMock = CreateShoppingCartMock();
-            var categoryFake = new Mock<ICategory>();
-            categoryFake.Setup(x => x.AddCosmetics(It.IsAny<IProduct>())).Verifiable();
-            var engineFake = new EngineFake(factoryMock.Object, cartMock.Object);
-            engineFake.Categories.Add("ForMale", categoryFake.Object);
-            engineFake.Products.Add("White+", It.IsAny<IProduct>());
-            string command = "AddToCategory ForMale White+";
+            string categoryName = "ForMale";
+            string productName = "Cool";
 
-            Console.SetIn(new StringReader(command));
-            engineFake.Start();
+            var fakeFactory = CreateFactoryFake();
+            var fakeCart = CreateShoppingCartFake();
+            var fakeCommandProvier = CreateCommandProviderFake();
 
-            categoryFake.Verify(x => x.AddCosmetics(It.IsAny<IProduct>()));
+            var fakeCommand = new Mock<ICommand>();
+            var fakeCategory = new Mock<ICategory>();
+            var fakeEngine = new EngineFake(fakeFactory.Object, fakeCart.Object, fakeCommandProvier.Object);
+
+            fakeEngine.Categories.Add(categoryName, fakeCategory.Object);
+            fakeEngine.Products.Add(productName, It.IsAny<IProduct>());
+
+            fakeCommand.SetupGet(x => x.Name).Returns("RemoveFromCategory");
+            fakeCommand.SetupGet(x => x.Parameters).Returns(new List<string> { categoryName, productName });
+            fakeCommandProvier.Setup(x => x.ReadCommands()).Returns(new List<ICommand> { fakeCommand.Object });
+            fakeCategory.Setup(x => x.RemoveCosmetics(It.IsAny<IProduct>())).Verifiable();
+
+            fakeEngine.Start();
+
+            fakeCategory.Verify(x => x.RemoveCosmetics(It.IsAny<IProduct>()), Times.Once);
         }
 
         [Test]
-        public void Start_RemoveFromCategoryCommand_ShouldAddSelectedProductToRespectiveCategory()
+        public void Start_CorrectShowCategoryCommandIsPassed_ShouldCallTheRespectiveCategoryPrintMethod()
         {
-            var factoryMock = CreateFactoryMock();
-            var cartMock = CreateShoppingCartMock();
-            var categoryFake = new Mock<ICategory>();
-            categoryFake.Setup(x => x.RemoveCosmetics(It.IsAny<IProduct>())).Verifiable();
-            var engineFake = new EngineFake(factoryMock.Object, cartMock.Object);
-            engineFake.Categories.Add("ForMale", categoryFake.Object);
-            engineFake.Products.Add("White+", It.IsAny<IProduct>());
-            string command = "RemoveFromCategory ForMale White+";
+            string categoryName = "ForMale";
 
-            Console.SetIn(new StringReader(command));
-            engineFake.Start();
+            var fakeFactory = CreateFactoryFake();
+            var fakeCart = CreateShoppingCartFake();
+            var fakeCommandProvier = CreateCommandProviderFake();
 
-            categoryFake.Verify(x => x.RemoveCosmetics(It.IsAny<IProduct>()));
+            var fakeCommand = new Mock<ICommand>();
+            var fakeCategory = new Mock<ICategory>();
+            var fakeEngine = new EngineFake(fakeFactory.Object, fakeCart.Object, fakeCommandProvier.Object);
+
+            fakeEngine.Categories.Add(categoryName, fakeCategory.Object);
+
+            fakeCategory.Setup(x => x.Print()).Verifiable();
+            fakeCommand.SetupGet(x => x.Name).Returns("ShowCategory");
+            fakeCommand.SetupGet(x => x.Parameters).Returns(new List<string> { categoryName });
+            fakeCommandProvier.Setup(x => x.ReadCommands()).Returns(new List<ICommand> { fakeCommand.Object });
+
+            fakeEngine.Start();
+
+            fakeCategory.Verify(x => x.Print(), Times.Once);
         }
 
         [Test]
-        public void Start_ShowCategory_CategoryShouldPrintItself()
+        public void Start_CorrectCreateShampooCommandIsPassed_ShouldAddANewShampooToList()
         {
-            var factoryMock = CreateFactoryMock();
-            var cartMock = CreateShoppingCartMock();
-            var categoryMock = new Mock<ICategory>();
-            categoryMock.Setup(x => x.Print()).Verifiable();
-            var mockEngine = new EngineFake(factoryMock.Object, cartMock.Object);
-            mockEngine.Categories.Add("ForMale", categoryMock.Object);
-            string command = "ShowCategory ForMale";
+            string shampooName = "Cool";
 
-            Console.SetIn(new StringReader(command));
-            mockEngine.Start();
+            var fakeFactory = CreateFactoryFake();
+            var fakeCart = CreateShoppingCartFake();
+            var fakeCommandProvier = CreateCommandProviderFake();
 
-            categoryMock.Verify(x => x.Print(), Times.AtLeastOnce);
+            var fakeCommand = new Mock<ICommand>();
+            var fakeShampoo = new Mock<IShampoo>();
+            var fakeEngine = new EngineFake(fakeFactory.Object, fakeCart.Object, fakeCommandProvier.Object);
+
+            fakeShampoo.SetupGet(x => x.Name).Returns(shampooName);
+            fakeFactory.Setup(x => x.CreateShampoo(It.IsAny<string>(), It.IsAny<string>(), It.IsAny<decimal>(), It.IsAny<GenderType>(), It.IsAny<uint>(), It.IsAny<UsageType>()))
+                       .Returns(fakeShampoo.Object);
+
+            fakeCommand.SetupGet(x => x.Name).Returns("CreateShampoo");
+            fakeCommand.SetupGet(x => x.Parameters).Returns(new List<string> { "Cool", "Nivea", "0,50", "men", "500", "everyday" });
+            fakeCommandProvier.Setup(x => x.ReadCommands()).Returns(new List<ICommand> { fakeCommand.Object });
+
+            fakeEngine.Start();
+
+            Assert.AreEqual(1, fakeEngine.Products.Count);
+            Assert.IsTrue(fakeEngine.Products.ContainsKey(shampooName));
         }
 
         [Test]
-        public void Start_CreateShampoo_AddsTheProduct()
+        public void Start_CorrectCreateToothpasteCommandIsPassed_ShouldAddANewToothpasteToList()
         {
-            var factoryMock = CreateFactoryMock();
-            var cartMock = CreateShoppingCartMock();
-            factoryMock.Setup(x => x.CreateShampoo(It.IsAny<string>(), It.IsAny<string>(), It.IsAny<decimal>(),
-                It.IsAny<GenderType>(), It.IsAny<uint>(), It.IsAny<UsageType>()));
-            var mockEngine = new EngineFake(factoryMock.Object, cartMock.Object);
-            string command = "CreateShampoo Cool Nivea 0,50 men 500 everyday";
+            // Arrange
+            string toothpasteName = "White+";
 
-            Console.SetIn(new StringReader(command));
-            mockEngine.Start();
+            var fakeFactory = CreateFactoryFake();
+            var fakeCart = CreateShoppingCartFake();
+            var fakeCommandProvier = CreateCommandProviderFake();
 
-            Assert.AreEqual(1, mockEngine.Products.Count);
-            Assert.IsTrue(mockEngine.Products.ContainsKey("Cool"));
+            var fakeCommand = new Mock<ICommand>();
+            var fakeToothpaste = new Mock<IToothpaste>();
+            var fakeEngine = new EngineFake(fakeFactory.Object, fakeCart.Object, fakeCommandProvier.Object);
+
+            fakeToothpaste.SetupGet(x => x.Name).Returns(toothpasteName);
+            fakeFactory.Setup(x => x.CreateToothpaste(It.IsAny<string>(), It.IsAny<string>(), It.IsAny<decimal>(), It.IsAny<GenderType>(), It.IsAny<IList<string>>()))
+                       .Returns(fakeToothpaste.Object);
+
+            fakeCommand.SetupGet(x => x.Name).Returns("CreateToothpaste");
+            fakeCommand.SetupGet(x => x.Parameters).Returns(new List<string> { "White+", "Colgate", "15,50", "men", "fluor,bqla,golqma" });
+            fakeCommandProvier.Setup(x => x.ReadCommands()).Returns(new List<ICommand> { fakeCommand.Object });
+
+            // Act
+            fakeEngine.Start();
+
+            // Assert
+            Assert.AreEqual(1, fakeEngine.Products.Count);
+            Assert.IsTrue(fakeEngine.Products.ContainsKey(toothpasteName));
         }
 
         [Test]
-        public void Start_CreateToothPaste_AddsTheProduct()
+        public void Start_CorrectAddToShoppingCartCommand_ShouldCallShoppingCartAddProductMethod()
         {
-            var factoryMock = CreateFactoryMock();
-            var cartMock = CreateShoppingCartMock();
-            factoryMock.Setup(x => x.CreateToothpaste(It.IsAny<string>(), It.IsAny<string>(), It.IsAny<decimal>(),
-                It.IsAny<GenderType>(), It.IsAny<IList<string>>()));
-            var mockEngine = new EngineFake(factoryMock.Object, cartMock.Object);
-            string command = "CreateToothpaste White+++ C 15,50 men fluor,bqla,golqma";
+            string productName = "Cool";
 
-            Console.SetIn(new StringReader(command));
-            mockEngine.Start();
+            var fakeFactory = CreateFactoryFake();
+            var fakeCart = CreateShoppingCartFake();
+            var fakeCommandProvier = CreateCommandProviderFake();
 
-            Assert.AreEqual(1, mockEngine.Products.Count);
-            Assert.IsTrue(mockEngine.Products.ContainsKey("White+++"));
+            var fakeCommand = new Mock<ICommand>();
+            var fakeEngine = new EngineFake(fakeFactory.Object, fakeCart.Object, fakeCommandProvier.Object);
+
+            fakeCommand.SetupGet(x => x.Name).Returns("AddToShoppingCart");
+            fakeCommand.SetupGet(x => x.Parameters).Returns(new List<string> { productName });
+            fakeCommandProvier.Setup(x => x.ReadCommands()).Returns(new List<ICommand> { fakeCommand.Object });
+            fakeCart.Setup(x => x.AddProduct(It.IsAny<IProduct>())).Verifiable();
+
+            fakeEngine.Products.Add(productName, It.IsAny<IProduct>());
+
+            fakeEngine.Start();
+
+            fakeCart.Verify(x => x.AddProduct(It.IsAny<IProduct>()));
         }
 
         [Test]
-        public void Start_AddToShoppingCart_ShouldCallShoppingCatAddProduct()
+        public void Start_CorrectRemoveFromShoppingCartCommand_ShouldCallShoppingCartRemoveProductMethod()
         {
-            var factoryMock = CreateFactoryMock();
-            var cartMock = CreateShoppingCartMock();
-            cartMock.Setup(x => x.AddProduct(It.IsAny<IProduct>())).Verifiable();
-            var mockEngine = new EngineFake(factoryMock.Object, cartMock.Object);
-            mockEngine.Products.Add("White+", It.IsAny<IProduct>());
-            string command = "AddToShoppingCart White+";
+            string productName = "Cool";
 
-            Console.SetIn(new StringReader(command));
-            mockEngine.Start();
+            var fakeFactory = CreateFactoryFake();
+            var fakeCart = CreateShoppingCartFake();
+            var fakeCommandProvier = CreateCommandProviderFake();
 
-            cartMock.Verify(x => x.AddProduct(It.IsAny<IProduct>()));
-        }
+            var fakeCommand = new Mock<ICommand>();
+            var fakeEngine = new EngineFake(fakeFactory.Object, fakeCart.Object, fakeCommandProvier.Object);
 
-        [Test]
-        public void Start_RemoveFromShoppingCart_ShouldCallShoppingCartRemoveProduct()
-        {
-            var factoryMock = CreateFactoryMock();
-            var cartMock = CreateShoppingCartMock();
-            cartMock.Setup(x => x.ContainsProduct(It.IsAny<IProduct>())).Returns(true);
-            cartMock.Setup(x => x.RemoveProduct(It.IsAny<IProduct>())).Verifiable();
-            var mockEngine = new EngineFake(factoryMock.Object, cartMock.Object);
-            mockEngine.Products.Add("White+", It.IsAny<IProduct>());
-            string command = "RemoveFromShoppingCart White+";
+            fakeCommand.SetupGet(x => x.Name).Returns("RemoveFromShoppingCart");
+            fakeCommand.SetupGet(x => x.Parameters).Returns(new List<string> { productName });
+            fakeCommandProvier.Setup(x => x.ReadCommands()).Returns(new List<ICommand> { fakeCommand.Object });
+            fakeCart.Setup(x => x.RemoveProduct(It.IsAny<IProduct>())).Verifiable();
+            fakeCart.Setup(x => x.ContainsProduct(It.IsAny<IProduct>())).Returns(true);
 
-            Console.SetIn(new StringReader(command));
-            mockEngine.Start();
+            fakeEngine.Products.Add(productName, It.IsAny<IProduct>());
 
-            cartMock.Verify(x => x.RemoveProduct(It.IsAny<IProduct>()));
+            fakeEngine.Start();
+
+            fakeCart.Verify(x => x.RemoveProduct(It.IsAny<IProduct>()));
         }
 
         // Factories
-        private Mock<ICosmeticsFactory> CreateFactoryMock()
+        private Mock<ICosmeticsFactory> CreateFactoryFake()
         {
             return new Mock<ICosmeticsFactory>();
         }
 
-        private Mock<IShoppingCart> CreateShoppingCartMock()
+        private Mock<IShoppingCart> CreateShoppingCartFake()
         {
             return new Mock<IShoppingCart>();
+        }
+
+        private Mock<ICommandProvider> CreateCommandProviderFake()
+        {
+            return new Mock<ICommandProvider>();
         }
     }
 }

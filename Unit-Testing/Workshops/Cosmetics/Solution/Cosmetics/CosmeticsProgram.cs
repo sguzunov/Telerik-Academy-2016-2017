@@ -9,7 +9,8 @@ namespace Cosmetics
         {
             var factory = new CosmeticsFactory();
             var shoppingCart = new ShoppingCart();
-            var engine = new CosmeticsEngine(factory, shoppingCart);
+            var commandProvider = new ConsoleCommandProvider();
+            var engine = new CosmeticsEngine(factory, shoppingCart, commandProvider);
 
             engine.Start();
         }

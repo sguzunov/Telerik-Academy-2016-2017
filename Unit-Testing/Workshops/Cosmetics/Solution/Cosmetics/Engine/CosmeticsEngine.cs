@@ -30,13 +30,16 @@
 
         private readonly ICosmeticsFactory factory;
         private readonly IShoppingCart shoppingCart;
+        private readonly ICommandProvider commandProvider;
         protected readonly IDictionary<string, ICategory> categories;
         protected readonly IDictionary<string, IProduct> products;
 
         public CosmeticsEngine(
             ICosmeticsFactory factory,
-            IShoppingCart shoppingCart)
+            IShoppingCart shoppingCart,
+            ICommandProvider commandProvider)
         {
+            this.commandProvider = commandProvider;
             this.factory = factory;
             this.shoppingCart = shoppingCart;
             this.categories = new Dictionary<string, ICategory>();
@@ -45,27 +48,27 @@
 
         public void Start()
         {
-            var commands = this.ReadCommands();
+            var commands = this.commandProvider.ReadCommands();
             var commandResult = this.ProcessCommands(commands);
             this.PrintReports(commandResult);
         }
 
-        private IList<ICommand> ReadCommands()
-        {
-            var commands = new List<ICommand>();
+        //private IList<ICommand> ReadCommands()
+        //{
+        //    var commands = new List<ICommand>();
 
-            var currentLine = Console.ReadLine();
+        //    var currentLine = Console.ReadLine();
 
-            while (!string.IsNullOrEmpty(currentLine))
-            {
-                var currentCommand = Command.Parse(currentLine);
-                commands.Add(currentCommand);
+        //    while (!string.IsNullOrEmpty(currentLine))
+        //    {
+        //        var currentCommand = Command.Parse(currentLine);
+        //        commands.Add(currentCommand);
 
-                currentLine = Console.ReadLine();
-            }
+        //        currentLine = Console.ReadLine();
+        //    }
 
-            return commands;
-        }
+        //    return commands;
+        //}
 
         private IList<string> ProcessCommands(IList<ICommand> commands)
         {

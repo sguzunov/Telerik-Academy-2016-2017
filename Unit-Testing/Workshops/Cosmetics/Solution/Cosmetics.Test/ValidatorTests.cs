@@ -9,7 +9,7 @@
     public class ValidatorTests
     {
         [Test]
-        public void CheckIfNull_NullIsPassed_ThrowsException()
+        public void CheckIfNull_NullIsPassed_ShouldThrowsException()
         {
             Assert.Throws<NullReferenceException>(() => Validator.CheckIfNull(null));
         }
@@ -24,7 +24,7 @@
 
         [TestCase("")]
         [TestCase(null)]
-        public void CheckIfStringIsNullOrEmpty_InvalidString_ThrowsException(string text)
+        public void CheckIfStringIsNullOrEmpty_InvalidString_ShouldThrowsException(string text)
         {
             Assert.Throws<NullReferenceException>(() => Validator.CheckIfStringIsNullOrEmpty(text));
         }
