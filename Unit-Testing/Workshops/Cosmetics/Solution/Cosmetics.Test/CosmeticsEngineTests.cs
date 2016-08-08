@@ -136,7 +136,6 @@
             var fakeShampoo = new Mock<IShampoo>();
             var fakeEngine = new EngineFake(fakeFactory.Object, fakeCart.Object, fakeCommandProvier.Object);
 
-            fakeShampoo.SetupGet(x => x.Name).Returns(shampooName);
             fakeFactory.Setup(x => x.CreateShampoo(It.IsAny<string>(), It.IsAny<string>(), It.IsAny<decimal>(), It.IsAny<GenderType>(), It.IsAny<uint>(), It.IsAny<UsageType>()))
                        .Returns(fakeShampoo.Object);
 
@@ -164,7 +163,6 @@
             var fakeToothpaste = new Mock<IToothpaste>();
             var fakeEngine = new EngineFake(fakeFactory.Object, fakeCart.Object, fakeCommandProvier.Object);
 
-            fakeToothpaste.SetupGet(x => x.Name).Returns(toothpasteName);
             fakeFactory.Setup(x => x.CreateToothpaste(It.IsAny<string>(), It.IsAny<string>(), It.IsAny<decimal>(), It.IsAny<GenderType>(), It.IsAny<IList<string>>()))
                        .Returns(fakeToothpaste.Object);
 

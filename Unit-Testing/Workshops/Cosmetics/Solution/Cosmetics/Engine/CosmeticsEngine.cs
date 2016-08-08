@@ -53,23 +53,6 @@
             this.PrintReports(commandResult);
         }
 
-        //private IList<ICommand> ReadCommands()
-        //{
-        //    var commands = new List<ICommand>();
-
-        //    var currentLine = Console.ReadLine();
-
-        //    while (!string.IsNullOrEmpty(currentLine))
-        //    {
-        //        var currentCommand = Command.Parse(currentLine);
-        //        commands.Add(currentCommand);
-
-        //        currentLine = Console.ReadLine();
-        //    }
-
-        //    return commands;
-        //}
-
         private IList<string> ProcessCommands(IList<ICommand> commands)
         {
             var reports = new List<string>();
