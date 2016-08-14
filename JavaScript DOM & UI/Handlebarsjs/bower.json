@@ -1,0 +1,21 @@
+{
+  "name": "Handlebarsjs",
+  "homepage": "https://github.com/sguzunov/Telerik-Academy-2016-2017",
+  "authors": [
+    "sguzunov <sguzunov@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "handlebars": "^4.0.5",
+    "jquery": "^3.1.0"
+  }
+}
