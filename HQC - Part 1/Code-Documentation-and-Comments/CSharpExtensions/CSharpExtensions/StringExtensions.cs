@@ -9,15 +9,15 @@
     using System.Text.RegularExpressions;
 
     /// <summary>
-    /// Provides methods for commonly used algorithms in <see cref="string"/> type.
+    /// Provides extension methods for <see cref="string"/> type.
     /// </summary>
     public static class StringExtensions
     {
         /// <summary>
-        /// Computes a md5 hash value for a string.
+        /// Computes a md5 hash value for each character and converts them to hexadecimal values.
         /// </summary>
-        /// <param name="input">String to be computed hash value for.</param>
-        /// <returns>Computed hash value.</returns>
+        /// <param name="input">String to be converted.</param>
+        /// <returns>A sequence of hexadecimal values.</returns>
         public static string ToMd5Hash(this string input)
         {
             var md5Hash = MD5.Create();
@@ -290,8 +290,8 @@
         /// <summary>
         /// Converts a string to a sequence of bytes.
         /// </summary>
-        /// <param name="input"></param>
-        /// <returns>A bytes array containing the encoded characters.</returns>
+        /// <param name="input">String to be converted.</param>
+        /// <returns>A byte array.</returns>
         public static byte[] ToByteArray(this string input)
         {
             var bytesArray = new byte[input.Length * sizeof(char)];
