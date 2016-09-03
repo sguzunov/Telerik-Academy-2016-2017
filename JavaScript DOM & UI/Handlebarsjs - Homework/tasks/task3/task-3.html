@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>ListView</title>
+    <script src="../../bower_components/handlebars/handlebars.min.js"></script>
+    <script src="../../bower_components/jquery/dist/jquery.min.js"></script>
+</head>
+
+<body>
+    <ul id="books-list" data-template="book-item-template"></ul>
+    <script id="book-item-template" type="type/x-handlebarsjs">
+        <li class="book-item">
+            <a href="/#books/{{id}}">
+                <strong>{{title}}</strong>
+            </a>
+        </li>
+    </script>
+    <script src="task-3.js"></script>
+    <script>
+        let books = [{
+            id: 1,
+            title: 'Code Complete'
+        }, {
+            id: 2,
+            title: 'Intro C#'
+        }, {
+            id: 3,
+            title: 'JS Ninja'
+        }];
+        $("#books-list").listview(books);
+    </script>
+</body>
+
+</html>
