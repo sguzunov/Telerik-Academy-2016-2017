@@ -2,12 +2,14 @@
 {
     public static class FileUtils
     {
+        private const string NoExtension = "";
+
         public static string GetFileExtension(string fileName)
         {
             int indexOfLastDot = fileName.LastIndexOf(".");
             if (indexOfLastDot == -1)
             {
-                return "";
+                return NoExtension;
             }
 
             string extension = fileName.Substring(indexOfLastDot + 1);
