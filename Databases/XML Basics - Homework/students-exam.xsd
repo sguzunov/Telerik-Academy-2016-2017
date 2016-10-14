@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="windows-1251"?>
+<xs:schema xmlns:tns="urn:students:exam" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="urn:students:exam" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="exam">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="tutor" type="xs:string" />
+        <xs:element name="score" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

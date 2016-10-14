@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="windows-1251"?>
+<xs:schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:exam="urn:students:exam" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="urn:students" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="urn:students:exam" />
+  <xs:element name="students">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" name="student">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="name" type="xs:string" />
+              <xs:element name="sex" type="xs:string" />
+              <xs:element name="birthdate" type="xs:string" />
+              <xs:element name="phone" type="xs:unsignedInt" />
+              <xs:element name="email" type="xs:string" />
+              <xs:element name="course" type="xs:unsignedByte" />
+              <xs:element name="specialty" type="xs:string" />
+              <xs:element name="facultyNumber" type="xs:unsignedInt" />
+              <xs:element name="exams">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element maxOccurs="unbounded" ref="exam:exam" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute name="id" type="xs:unsignedByte" use="required" />
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

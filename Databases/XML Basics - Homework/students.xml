@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<students xmlns="urn:students"
+          xmlns:exam="urn:students:exam"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  
+  <student id="1">
+    <name>John</name>
+    <sex>Male</sex>
+    <birthdate>27/05/1990</birthdate>
+    <phone>0888999666</phone>
+    <email>john@yahoo.com</email>
+    <course>3</course>
+    <specialty>Computer Science</specialty>
+    <facultyNumber>123123</facultyNumber>
+    <exams>
+      <exam:exam>
+        <exam:name>JavaScript Basics</exam:name>
+        <exam:tutor>Minkov</exam:tutor>
+        <exam:score>4.20</exam:score>
+      </exam:exam>
+      <exam:exam>
+        <exam:name>Databases</exam:name>
+        <exam:tutor>Kolev</exam:tutor>
+        <exam:score>5.70</exam:score>
+      </exam:exam>
+    </exams>
+  </student>
+  <student id="2">
+    <name>Jane</name>
+    <sex>Female</sex>
+    <birthdate>08/29/1984</birthdate>
+    <phone>0888999777</phone>
+    <email>jane@gmail.com</email>
+    <course>1</course>
+    <specialty>Mathematics</specialty>
+    <facultyNumber>321321</facultyNumber>
+    <exams>
+      <exam:exam>
+        <exam:name>Algebra</exam:name>
+        <exam:tutor>Vesheff</exam:tutor>
+        <exam:score>6.00 </exam:score>
+      </exam:exam>
+    </exams>
+  </student>
+</students>
