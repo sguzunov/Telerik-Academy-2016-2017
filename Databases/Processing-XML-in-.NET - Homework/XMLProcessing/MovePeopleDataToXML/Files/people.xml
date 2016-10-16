@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<people>
+  <person>
+    <firstName>John</firstName>
+    <lastName>Snow</lastName>
+    <phoneNumber>0008889991</phoneNumber>
+  </person>
+  <person>
+    <firstName>John</firstName>
+    <lastName>Dow</lastName>
+    <phoneNumber>0008889992</phoneNumber>
+  </person>
+  <person>
+    <firstName>Jane</firstName>
+    <lastName>Snow</lastName>
+    <phoneNumber>0008889956</phoneNumber>
+  </person>
+  <person>
+    <firstName>Will</firstName>
+    <lastName>Smith</lastName>
+    <phoneNumber>0338889991</phoneNumber>
+  </person>
+</people>

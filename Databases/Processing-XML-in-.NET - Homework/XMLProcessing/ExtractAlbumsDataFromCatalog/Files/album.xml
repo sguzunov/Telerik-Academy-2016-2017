@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="windows-1251"?>
+<albums>
+	<album>
+		<name>Back in Black</name>
+		<author>AC/DC</author>
+	</album>
+	<album>
+		<name>Ballbreaker</name>
+		<author>AC/DC</author>
+	</album>
+	<album>
+		<name>Recovery</name>
+		<author>Eminem</author>
+	</album>
+	<album>
+		<name>Guess Who's Back?</name>
+		<author>50 Cent</author>
+	</album>
+</albums>

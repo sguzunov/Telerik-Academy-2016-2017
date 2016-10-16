@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<catalog>
+  <album name="Back in Black">
+    <artist>AC/DC</artist>
+    <year>1980</year>
+    <producer>WWW</producer>
+    <price currency="US">50</price>
+    <songs>
+      <song>
+        <title>Hell Bells</title>
+        <duration>5:12</duration>
+      </song>
+      <song>
+        <title>Back in Black</title>
+        <duration>4:12</duration>
+      </song>
+      <song>
+        <title>Shake a leg</title>
+        <duration>4:20</duration>
+      </song>
+    </songs>
+  </album>
+  <album name="Ballbreaker">
+    <artist>AC/DC</artist>
+    <year>1995</year>
+    <producer>Rick Rubin</producer>
+    <price currency="US">35</price>
+    <songs>
+      <song>
+        <title>Hard as a Rock</title>
+        <duration>4:32</duration>
+      </song>
+      <song>
+        <title>Boogie Man</title>
+        <duration>4:12</duration>
+      </song>
+      <song>
+        <title>Love Bomb</title>
+        <duration>4:20</duration>
+      </song>
+      <song>
+        <title>Ballbreaker</title>
+        <duration>4:21</duration>
+      </song>
+      <song>
+        <title>Whiskey on the Rocks</title>
+        <duration>6:18</duration>
+      </song>
+    </songs>
+  </album>
+  <album name="Recovery">
+    <artist>Eminem</artist>
+    <year>2010</year>
+    <producer>Eminem</producer>
+    <price currency="US">70</price>
+    <songs>
+      <song>
+        <title>On Fire</title>
+        <duration>5:04</duration>
+      </song>
+      <song>
+        <title>Not Afraid</title>
+        <duration>4:08</duration>
+      </song>
+      <song>
+        <title>Space Bound</title>
+        <duration>4:39</duration>
+      </song>
+      <song>
+        <title>Almost Famous</title>
+        <duration>4:53</duration>
+      </song>
+      <song>
+        <title>No Love</title>
+        <duration>5:00</duration>
+      </song>
+    </songs>
+  </album>
+  <album name="Guess Who's Back?">
+    <artist>50 Cent</artist>
+    <year>2002</year>
+    <producer>Eminem</producer>
+    <price currency="US">90</price>
+    <songs>
+      <song>
+        <title>50 Bars</title>
+        <duration>3:33</duration>
+      </song>
+      <song>
+        <title>Too Hot</title>
+        <duration>3:48</duration>
+      </song>
+      <song>
+        <title>Be a Gentleman</title>
+        <duration>4:39</duration>
+      </song>
+      <song>
+        <title>Drop</title>
+        <duration>4:57</duration>
+      </song>
+      <song>
+        <title>U Not Like Me</title>
+        <duration>5:00</duration>
+      </song>
+    </songs>
+  </album>
+</catalog>
