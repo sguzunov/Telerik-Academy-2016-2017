@@ -60,7 +60,6 @@
   <ItemGroup>
     <Content Include="Files\index.html" />
     <Content Include="Files\ta-youtube-rss.xml" />
-    <Content Include="test.html" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

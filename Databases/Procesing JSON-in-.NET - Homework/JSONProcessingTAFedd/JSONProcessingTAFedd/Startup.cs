@@ -21,8 +21,8 @@ namespace JSONProcessingTAFedd
             const string taRssAsXmlPath = "../../Files/ta-youtube-rss.xml";
             const string taRssAsJsonPath = "../../Files/ta-youtube-rss.json";
 
-            //DownloadFile(taRssUrl, taRssAsXmlPath);
-            //ParseXmlToJson(taRssAsXmlPath, taRssAsJsonPath);
+            DownloadFile(taRssUrl, taRssAsXmlPath);
+            ParseXmlToJson(taRssAsXmlPath, taRssAsJsonPath);
 
             var rssJson = File.ReadAllText(taRssAsJsonPath);
 

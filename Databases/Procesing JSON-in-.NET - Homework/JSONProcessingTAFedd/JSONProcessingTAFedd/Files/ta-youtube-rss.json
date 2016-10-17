@@ -27,6 +27,90 @@
     "published": "2011-06-24T15:53:13+00:00",
     "entry": [
       {
+        "id": "yt:video:dh82S8ejtGU",
+        "yt:videoId": "dh82S8ejtGU",
+        "yt:channelId": "UCLC-vbm7OWvpbqzXaoAMGGw",
+        "title": "Бази данни & SQL: Въведение в SQL - част 1",
+        "link": {
+          "@rel": "alternate",
+          "@href": "http://www.youtube.com/watch?v=dh82S8ejtGU"
+        },
+        "author": {
+          "name": "TelerikAcademy",
+          "uri": "http://www.youtube.com/channel/UCLC-vbm7OWvpbqzXaoAMGGw"
+        },
+        "published": "2016-10-17T16:07:59+00:00",
+        "updated": "2016-10-17T17:01:50+00:00",
+        "media:group": {
+          "media:title": "Бази данни & SQL: Въведение в SQL - част 1",
+          "media:content": {
+            "@url": "https://www.youtube.com/v/dh82S8ejtGU?version=3",
+            "@type": "application/x-shockwave-flash",
+            "@width": "640",
+            "@height": "390"
+          },
+          "media:thumbnail": {
+            "@url": "https://i1.ytimg.com/vi/dh82S8ejtGU/hqdefault.jpg",
+            "@width": "480",
+            "@height": "360"
+          },
+          "media:description": "Лекция: Въведение в SQL - част 1\nКурс: Бази данни & SQL\nЛектор: Мартин Вешев\nДата: 17 октомври 2016\n\nУебсайт на Академията на Телерик: http://academy.telerik.com\n\nСледете за предстоящи безплатни обучения на Академията на Телерик във Facebook: http://www.facebook.com/TelerikAcademy.",
+          "media:community": {
+            "media:starRating": {
+              "@count": "0",
+              "@average": "0.00",
+              "@min": "1",
+              "@max": "5"
+            },
+            "media:statistics": {
+              "@views": "32"
+            }
+          }
+        }
+      },
+      {
+        "id": "yt:video:fyM0mPb6eU0",
+        "yt:videoId": "fyM0mPb6eU0",
+        "yt:channelId": "UCLC-vbm7OWvpbqzXaoAMGGw",
+        "title": "Бази данни & SQL: Въведение в SQL - част 2",
+        "link": {
+          "@rel": "alternate",
+          "@href": "http://www.youtube.com/watch?v=fyM0mPb6eU0"
+        },
+        "author": {
+          "name": "TelerikAcademy",
+          "uri": "http://www.youtube.com/channel/UCLC-vbm7OWvpbqzXaoAMGGw"
+        },
+        "published": "2016-10-17T15:33:55+00:00",
+        "updated": "2016-10-17T16:45:11+00:00",
+        "media:group": {
+          "media:title": "Бази данни & SQL: Въведение в SQL - част 2",
+          "media:content": {
+            "@url": "https://www.youtube.com/v/fyM0mPb6eU0?version=3",
+            "@type": "application/x-shockwave-flash",
+            "@width": "640",
+            "@height": "390"
+          },
+          "media:thumbnail": {
+            "@url": "https://i3.ytimg.com/vi/fyM0mPb6eU0/hqdefault.jpg",
+            "@width": "480",
+            "@height": "360"
+          },
+          "media:description": "Лекция: Въведение в SQL - част 2\nКурс: Бази данни & SQL\nЛектор: Мартин Вешев\nДата: 17 октомври 2016\n\nУебсайт на Академията на Телерик: http://academy.telerik.com\n\nСледете за предстоящи безплатни обучения на Академията на Телерик във Facebook: http://www.facebook.com/TelerikAcademy.",
+          "media:community": {
+            "media:starRating": {
+              "@count": "0",
+              "@average": "0.00",
+              "@min": "1",
+              "@max": "5"
+            },
+            "media:statistics": {
+              "@views": "20"
+            }
+          }
+        }
+      },
+      {
         "id": "yt:video:y7cIgoaratc",
         "yt:videoId": "y7cIgoaratc",
         "yt:channelId": "UCLC-vbm7OWvpbqzXaoAMGGw",
@@ -63,7 +147,7 @@
               "@max": "5"
             },
             "media:statistics": {
-              "@views": "102"
+              "@views": "208"
             }
           }
         }
@@ -105,7 +189,7 @@
               "@max": "5"
             },
             "media:statistics": {
-              "@views": "98"
+              "@views": "201"
             }
           }
         }
@@ -147,7 +231,7 @@
               "@max": "5"
             },
             "media:statistics": {
-              "@views": "125"
+              "@views": "190"
             }
           }
         }
@@ -189,7 +273,7 @@
               "@max": "5"
             },
             "media:statistics": {
-              "@views": "77"
+              "@views": "130"
             }
           }
         }
@@ -208,7 +292,7 @@
           "uri": "http://www.youtube.com/channel/UCLC-vbm7OWvpbqzXaoAMGGw"
         },
         "published": "2016-10-14T15:51:12+00:00",
-        "updated": "2016-10-15T01:54:14+00:00",
+        "updated": "2016-10-17T06:52:48+00:00",
         "media:group": {
           "media:title": "Представяне на курса",
           "media:content": {
@@ -231,7 +315,7 @@
               "@max": "5"
             },
             "media:statistics": {
-              "@views": "85"
+              "@views": "136"
             }
           }
         }
@@ -273,7 +357,7 @@
               "@max": "5"
             },
             "media:statistics": {
-              "@views": "114"
+              "@views": "180"
             }
           }
         }
@@ -315,7 +399,7 @@
               "@max": "5"
             },
             "media:statistics": {
-              "@views": "100"
+              "@views": "156"
             }
           }
         }
@@ -357,7 +441,7 @@
               "@max": "5"
             },
             "media:statistics": {
-              "@views": "143"
+              "@views": "217"
             }
           }
         }
@@ -376,7 +460,7 @@
           "uri": "http://www.youtube.com/channel/UCLC-vbm7OWvpbqzXaoAMGGw"
         },
         "published": "2016-10-14T13:09:11+00:00",
-        "updated": "2016-10-15T01:55:26+00:00",
+        "updated": "2016-10-17T06:46:57+00:00",
         "media:group": {
           "media:title": "Въведение в курса",
           "media:content": {
@@ -399,7 +483,7 @@
               "@max": "5"
             },
             "media:statistics": {
-              "@views": "145"
+              "@views": "229"
             }
           }
         }
@@ -441,7 +525,7 @@
               "@max": "5"
             },
             "media:statistics": {
-              "@views": "190"
+              "@views": "276"
             }
           }
         }
@@ -483,7 +567,7 @@
               "@max": "5"
             },
             "media:statistics": {
-              "@views": "111"
+              "@views": "164"
             }
           }
         }
@@ -525,7 +609,7 @@
               "@max": "5"
             },
             "media:statistics": {
-              "@views": "193"
+              "@views": "319"
             }
           }
         }
@@ -567,91 +651,7 @@
               "@max": "5"
             },
             "media:statistics": {
-              "@views": "223"
-            }
-          }
-        }
-      },
-      {
-        "id": "yt:video:YPSVpKZYeIg",
-        "yt:videoId": "YPSVpKZYeIg",
-        "yt:channelId": "UCLC-vbm7OWvpbqzXaoAMGGw",
-        "title": "Бази от данни & SQL: Основи на XML",
-        "link": {
-          "@rel": "alternate",
-          "@href": "http://www.youtube.com/watch?v=YPSVpKZYeIg"
-        },
-        "author": {
-          "name": "TelerikAcademy",
-          "uri": "http://www.youtube.com/channel/UCLC-vbm7OWvpbqzXaoAMGGw"
-        },
-        "published": "2016-10-13T14:15:27+00:00",
-        "updated": "2016-10-14T15:50:09+00:00",
-        "media:group": {
-          "media:title": "Бази от данни & SQL: Основи на XML",
-          "media:content": {
-            "@url": "https://www.youtube.com/v/YPSVpKZYeIg?version=3",
-            "@type": "application/x-shockwave-flash",
-            "@width": "640",
-            "@height": "390"
-          },
-          "media:thumbnail": {
-            "@url": "https://i2.ytimg.com/vi/YPSVpKZYeIg/hqdefault.jpg",
-            "@width": "480",
-            "@height": "360"
-          },
-          "media:description": "Лекция: Основи на XML\nКурс: Бази от данни & SQL октомври 2016\nЛектор: Дончо Минков\nДата: 12 октомври 2016 г.\n\nУебсайт на Академията на Телерик: http://academy.telerik.com\n\nСледете за предстоящи безплатни обучения на Академията на Телерик във Facebook: http://www.facebook.com/TelerikAcademy.",
-          "media:community": {
-            "media:starRating": {
-              "@count": "3",
-              "@average": "1.00",
-              "@min": "1",
-              "@max": "5"
-            },
-            "media:statistics": {
-              "@views": "215"
-            }
-          }
-        }
-      },
-      {
-        "id": "yt:video:glnaBYV9aKY",
-        "yt:videoId": "glnaBYV9aKY",
-        "yt:channelId": "UCLC-vbm7OWvpbqzXaoAMGGw",
-        "title": "Бази от данни & SQL: Работа с JSON със C#",
-        "link": {
-          "@rel": "alternate",
-          "@href": "http://www.youtube.com/watch?v=glnaBYV9aKY"
-        },
-        "author": {
-          "name": "TelerikAcademy",
-          "uri": "http://www.youtube.com/channel/UCLC-vbm7OWvpbqzXaoAMGGw"
-        },
-        "published": "2016-10-13T14:15:27+00:00",
-        "updated": "2016-10-14T13:27:21+00:00",
-        "media:group": {
-          "media:title": "Бази от данни & SQL: Работа с JSON със C#",
-          "media:content": {
-            "@url": "https://www.youtube.com/v/glnaBYV9aKY?version=3",
-            "@type": "application/x-shockwave-flash",
-            "@width": "640",
-            "@height": "390"
-          },
-          "media:thumbnail": {
-            "@url": "https://i4.ytimg.com/vi/glnaBYV9aKY/hqdefault.jpg",
-            "@width": "480",
-            "@height": "360"
-          },
-          "media:description": "Лекция: Работа с JSON със C#\nКурс: Бази от данни & SQL октомври 2016\nЛектор: Дончо Минков\nДата: 13 октомври 2016 г.\n\nУебсайт на Академията на Телерик: http://academy.telerik.com\n\nСледете за предстоящи безплатни обучения на Академията на Телерик във Facebook: http://www.facebook.com/TelerikAcademy.",
-          "media:community": {
-            "media:starRating": {
-              "@count": "1",
-              "@average": "5.00",
-              "@min": "1",
-              "@max": "5"
-            },
-            "media:statistics": {
-              "@views": "152"
+              "@views": "311"
             }
           }
         }
