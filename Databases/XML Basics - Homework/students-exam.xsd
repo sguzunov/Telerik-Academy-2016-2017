@@ -6,6 +6,7 @@
         <xs:element name="name" type="xs:string" />
         <xs:element name="tutor" type="xs:string" />
         <xs:element name="score" type="xs:decimal" />
+        <xs:element name="date" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

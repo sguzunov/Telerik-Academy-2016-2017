@@ -2,7 +2,7 @@
 <students xmlns="urn:students"
           xmlns:exam="urn:students:exam"
           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  
+
   <student id="1">
     <name>John</name>
     <sex>Male</sex>
@@ -17,11 +17,13 @@
         <exam:name>JavaScript Basics</exam:name>
         <exam:tutor>Minkov</exam:tutor>
         <exam:score>4.20</exam:score>
+        <exam:date>01/01/2016</exam:date>
       </exam:exam>
       <exam:exam>
         <exam:name>Databases</exam:name>
         <exam:tutor>Kolev</exam:tutor>
         <exam:score>5.70</exam:score>
+        <exam:date>01/01/2016</exam:date>
       </exam:exam>
     </exams>
   </student>
@@ -39,6 +41,7 @@
         <exam:name>Algebra</exam:name>
         <exam:tutor>Vesheff</exam:tutor>
         <exam:score>6.00 </exam:score>
+        <exam:date>01/01/2016</exam:date>
       </exam:exam>
     </exams>
   </student>
