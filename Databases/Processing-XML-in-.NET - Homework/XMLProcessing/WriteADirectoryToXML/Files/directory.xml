@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dir name="..">
+  <file>App.config</file>
+  <file>Startup.cs</file>
+  <file>WriteADirectoryToXML.csproj</file>
+  <dir name="bin">
+    <dir name="Debug">
+      <file>WriteADirectoryToXML.exe</file>
+      <file>WriteADirectoryToXML.exe.config</file>
+      <file>WriteADirectoryToXML.pdb</file>
+      <file>WriteADirectoryToXML.vshost.exe</file>
+      <file>WriteADirectoryToXML.vshost.exe.config</file>
+    </dir>
+    <dir name="Release" />
+  </dir>
+  <dir name="Files">
+    <file>directory.xml</file>
+  </dir>
+  <dir name="obj">
+    <dir name="Debug">
+      <file>DesignTimeResolveAssemblyReferencesInput.cache</file>
+      <file>TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs</file>
+      <file>TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs</file>
+      <file>TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs</file>
+      <file>WriteADirectoryToXML.csproj.FileListAbsolute.txt</file>
+      <file>WriteADirectoryToXML.csprojResolveAssemblyReference.cache</file>
+      <file>WriteADirectoryToXML.exe</file>
+      <file>WriteADirectoryToXML.pdb</file>
+      <dir name="TempPE" />
+    </dir>
+  </dir>
+  <dir name="Properties">
+    <file>AssemblyInfo.cs</file>
+  </dir>
+</dir>

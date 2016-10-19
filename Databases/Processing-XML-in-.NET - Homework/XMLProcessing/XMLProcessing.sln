@@ -17,6 +17,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovePeopleDataToXML", "Move
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExtractAlbumsDataFromCatalog", "ExtractAlbumsDataFromCatalog\ExtractAlbumsDataFromCatalog.csproj", "{077C4240-C2AF-4A4C-9C86-B40C81C048AB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WriteADirectoryToXMLWithXDocument", "WriteADirectoryToXML\WriteADirectoryToXMLWithXDocument.csproj", "{F7F45319-C07E-408F-B9CC-01372640E12C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WriteADirectoryWithXMLWriter", "WriteADirectoryWithXMLDoc\WriteADirectoryWithXMLWriter.csproj", "{A42E4F62-0800-4E54-A0DC-D25E53428C5B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApplyXSDToXML", "ApplyXSDToXML\ApplyXSDToXML.csproj", "{4CCD126A-772C-4F16-837C-F4CAE993E86E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +57,18 @@ Global
 		{077C4240-C2AF-4A4C-9C86-B40C81C048AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{077C4240-C2AF-4A4C-9C86-B40C81C048AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{077C4240-C2AF-4A4C-9C86-B40C81C048AB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F7F45319-C07E-408F-B9CC-01372640E12C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F7F45319-C07E-408F-B9CC-01372640E12C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F7F45319-C07E-408F-B9CC-01372640E12C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F7F45319-C07E-408F-B9CC-01372640E12C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A42E4F62-0800-4E54-A0DC-D25E53428C5B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A42E4F62-0800-4E54-A0DC-D25E53428C5B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A42E4F62-0800-4E54-A0DC-D25E53428C5B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A42E4F62-0800-4E54-A0DC-D25E53428C5B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4CCD126A-772C-4F16-837C-F4CAE993E86E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4CCD126A-772C-4F16-837C-F4CAE993E86E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4CCD126A-772C-4F16-837C-F4CAE993E86E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4CCD126A-772C-4F16-837C-F4CAE993E86E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
