@@ -1,8 +1,10 @@
 ﻿using System;
+using System.Collections;
+using System.Collections.Generic;
 
 namespace MyCollections
 {
-    public class Stack<T>
+    public class Stack<T> : IEnumerable<T>
     {
         private const int InitialCapacity = 8;
 
@@ -15,7 +17,7 @@ namespace MyCollections
             this.Capacity = capacity;
 
             this.Count = 0;
-            this.topIndex = 0;
+            this.topIndex = -1;
             this.elements = new T[this.Capacity];
         }
 
@@ -32,6 +34,8 @@ namespace MyCollections
                 {
                     throw new ArgumentException("Capacity must be a number greater than 0!");
                 }
+
+                this.capacity = value;
             }
         }
 
@@ -115,6 +119,19 @@ namespace MyCollections
             }
 
             this.elements = newElements;
+        }
+
+        public IEnumerator<T> GetEnumerator()
+        {
+            foreach (var element in this.elements)
+            {
+                yield return element;
+            }
+        }
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return this.GetEnumerator();
         }
 
         private bool IsEmpty
