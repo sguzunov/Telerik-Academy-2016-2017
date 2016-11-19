@@ -43,7 +43,7 @@ namespace MyCollections
 
         public T Peek()
         {
-            if (this.IsEmpty)
+            if (this.IsEmpty())
             {
                 throw new InvalidOperationException("Stack is empty!");
             }
@@ -55,7 +55,7 @@ namespace MyCollections
 
         public T Pop()
         {
-            if (this.IsEmpty)
+            if (this.IsEmpty())
             {
                 throw new InvalidOperationException("Stack is empty!");
             }
@@ -67,6 +67,7 @@ namespace MyCollections
             return element;
         }
 
+        // Test what happens with capacity!!!
         public void Push(T element)
         {
             if (this.Count + 1 >= this.Capacity)
@@ -105,6 +106,7 @@ namespace MyCollections
 
         public void Clear()
         {
+            this.Count = 0;
             this.Capacity = InitialCapacity;
             this.elements = new T[this.Capacity];
         }
@@ -134,12 +136,9 @@ namespace MyCollections
             return this.GetEnumerator();
         }
 
-        private bool IsEmpty
+        private bool IsEmpty()
         {
-            get
-            {
-                return this.Count == 0;
-            }
+            return this.Count == 0;
         }
     }
 }
