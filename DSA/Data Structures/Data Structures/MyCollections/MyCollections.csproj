@@ -40,6 +40,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="LinkedList.cs" />
+    <Compile Include="ListElement.cs" />
     <Compile Include="Queue.cs" />
     <Compile Include="Stack.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
