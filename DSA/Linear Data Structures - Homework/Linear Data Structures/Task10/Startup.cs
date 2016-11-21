@@ -13,7 +13,7 @@ namespace Task10
     {
         public static void Main()
         {
-
+            // TODO
         }
     }
 }
