@@ -16,10 +16,10 @@ namespace Matrix
                 {' ', ' ', ' ', ' ' },
             };
 
-            FindPath(0, 0, matrix, 'S', new List<char>());
+            FindPath(0, 0, matrix, new List<char>());
         }
 
-        private static void FindPath(int row, int col, char[,] matrix, char dir, List<char> path)
+        private static void FindPath(int row, int col, char[,] matrix, List<char> path)
         {
             if (matrix[row, col] == 'e')
             {
@@ -30,7 +30,7 @@ namespace Matrix
             var deltaX = new int[] { 0, 1, 0, -1 };
             var deltaY = new int[] { -1, 0, 1, 0 };
 
-            matrix[row, col] = dir;
+            matrix[row, col] = '#';
             for (int i = 0; i < deltaX.Length; i++)
             {
                 var newRow = row + deltaY[i];
@@ -39,22 +39,24 @@ namespace Matrix
                     newCol >= 0 && newCol < matrix.GetLength(1) &&
                     (matrix[newRow, newCol] == ' ' || matrix[newRow, newCol] == 'e'))
                 {
-                    var newDir = 'L';
                     if (i == 0)
                     {
-                        newDir = 'U';
+                        path.Add('U');
                     }
                     else if (i == 1)
                     {
-                        newDir = 'R';
+                        path.Add('R');
                     }
                     else if (i == 2)
                     {
-                        newDir = 'D';
+                        path.Add('D');
+                    }
+                    else
+                    {
+                        path.Add('L');
                     }
 
-                    path.Add(newDir);
-                    FindPath(newRow, newCol, matrix, newDir, path);
+                    FindPath(newRow, newCol, matrix, path);
                     path.RemoveAt(path.Count - 1);
                 }
             }
