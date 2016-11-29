@@ -21,6 +21,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExistingPathBetweenTwoCells
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConnectedArea", "ConnectedArea\ConnectedArea.csproj", "{73A08EF8-24F4-4251-930A-097131EF6543}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PermutationsWithRepetitionsMultiset", "PermutationsWithRepetitionsMultiset\PermutationsWithRepetitionsMultiset.csproj", "{037504CB-D7F4-4265-96DD-C3CD04B86974}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EightQueens", "EightQueens\EightQueens.csproj", "{D80A1B58-FB23-4B3B-9830-E8CBBB79E592}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -63,6 +67,14 @@ Global
 		{73A08EF8-24F4-4251-930A-097131EF6543}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{73A08EF8-24F4-4251-930A-097131EF6543}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{73A08EF8-24F4-4251-930A-097131EF6543}.Release|Any CPU.Build.0 = Release|Any CPU
+		{037504CB-D7F4-4265-96DD-C3CD04B86974}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{037504CB-D7F4-4265-96DD-C3CD04B86974}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{037504CB-D7F4-4265-96DD-C3CD04B86974}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{037504CB-D7F4-4265-96DD-C3CD04B86974}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D80A1B58-FB23-4B3B-9830-E8CBBB79E592}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D80A1B58-FB23-4B3B-9830-E8CBBB79E592}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D80A1B58-FB23-4B3B-9830-E8CBBB79E592}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D80A1B58-FB23-4B3B-9830-E8CBBB79E592}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
