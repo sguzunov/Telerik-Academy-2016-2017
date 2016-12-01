@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BinaryPasswords", "BinaryPasswords\BinaryPasswords.csproj", "{4D6310AB-5964-4169-AC4D-B9324C9A0589}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ColoredBunnies", "ColoredBunnies\ColoredBunnies.csproj", "{B4D72DE7-8785-4DB2-AE5C-611D66C181EE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4D6310AB-5964-4169-AC4D-B9324C9A0589}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4D6310AB-5964-4169-AC4D-B9324C9A0589}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4D6310AB-5964-4169-AC4D-B9324C9A0589}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4D6310AB-5964-4169-AC4D-B9324C9A0589}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B4D72DE7-8785-4DB2-AE5C-611D66C181EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B4D72DE7-8785-4DB2-AE5C-611D66C181EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B4D72DE7-8785-4DB2-AE5C-611D66C181EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B4D72DE7-8785-4DB2-AE5C-611D66C181EE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
