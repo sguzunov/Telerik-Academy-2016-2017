@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BinaryPasswords", "BinaryPa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ColoredBunnies", "ColoredBunnies\ColoredBunnies.csproj", "{B4D72DE7-8785-4DB2-AE5C-611D66C181EE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dividers", "Dividers\Dividers.csproj", "{2BFEA17E-50C6-46D2-8FC6-9EF35A946C97}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{B4D72DE7-8785-4DB2-AE5C-611D66C181EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B4D72DE7-8785-4DB2-AE5C-611D66C181EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B4D72DE7-8785-4DB2-AE5C-611D66C181EE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2BFEA17E-50C6-46D2-8FC6-9EF35A946C97}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2BFEA17E-50C6-46D2-8FC6-9EF35A946C97}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2BFEA17E-50C6-46D2-8FC6-9EF35A946C97}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2BFEA17E-50C6-46D2-8FC6-9EF35A946C97}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
