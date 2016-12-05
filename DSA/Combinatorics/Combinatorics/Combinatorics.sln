@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BinaryPasswords", "BinaryPa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ColoredBunnies", "ColoredBunnies\ColoredBunnies.csproj", "{B4D72DE7-8785-4DB2-AE5C-611D66C181EE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dividers", "Dividers\Dividers.csproj", "{2BFEA17E-50C6-46D2-8FC6-9EF35A946C97}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Divisors", "Dividers\Divisors.csproj", "{2BFEA17E-50C6-46D2-8FC6-9EF35A946C97}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
