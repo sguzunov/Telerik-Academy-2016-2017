@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MathsComparison", "SimpleMathComparison\MathsComparison.csproj", "{FE6833FD-0512-4A55-AA12-568F531BE46C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SortAlgorithmsComparisons", "SortAlgorithmsComparisons\SortAlgorithmsComparisons.csproj", "{A47BB072-D9B8-4CF7-B018-4C3F540908FB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FE6833FD-0512-4A55-AA12-568F531BE46C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE6833FD-0512-4A55-AA12-568F531BE46C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE6833FD-0512-4A55-AA12-568F531BE46C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE6833FD-0512-4A55-AA12-568F531BE46C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A47BB072-D9B8-4CF7-B018-4C3F540908FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A47BB072-D9B8-4CF7-B018-4C3F540908FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A47BB072-D9B8-4CF7-B018-4C3F540908FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A47BB072-D9B8-4CF7-B018-4C3F540908FB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
